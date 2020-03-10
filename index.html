@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HerbaWeb</title>
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css.css">
+<style>
+	body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+</style>
+<body class="light-grey content" style="max-width:1600px">
+
+	<!-- Sidebar/Menu -->
+	<nav>
+		<img src="icon.png" style="width:auto;" class="icon">
+
+		<div>
+			<button class="openbtn" onclick="openNav()">☰ Open Menu</button>  
+		</div >
+
+
+		<div class="sidebar" id="mySidebar" >
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">  x  </a>
+			<a href="#">About</a>
+			<a href="#">Services</a>
+			<a href="#">Clients</a>
+			<a href="#">Contact</a>
+		</div>
+
+		<script>
+			function openNav() {
+				document.getElementById("mySidebar").style.width = "200px";
+			}
+
+			function closeNav() {
+				document.getElementById("mySidebar").style.width = "0px";
+			}
+		</script>
+	</nav>		
+	
+	<!-- !PAGE CONTENT! -->
+	<div class="principal" >
+		<!-- Header -->
+		<header id="portfolio" style="margin-top: 0">
+			<div class="container">
+				<h1><b>HerbaWeb</b></h1>
+				<div class="section bottombar padding-16">
+					<span class="margin-right">Effect:</span> 
+					<button class="button white"><i class="margin-right"></i>Sedative</button>
+					<button class="button white hide-small"><i class="margin-right"></i>Stimulant</button>
+					<button class="button white hide-small"><i class="margin-right"></i>Euphoric</button>
+					<button class="button white hide-small"><i class="margin-right"></i>Deliriant</button>
+					<button class="button white hide-small"><i class="margin-right"></i>Hallucinogenic</button>
+				</div>
+			</div>
+		</header>
+
+		<!-- First Photo Grid-->
+		<div class="row-padding">
+			<div class="third container margin-bottom">
+				<img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/purple-opium-poppy-tim-gainey.jpg" alt="Image1" style="width:100%" class="hover-opacity">
+				<div class="container white">
+					<p><b>Lorem Ipsum</b></p>
+					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+				</div>
+			</div>
+			<div class="third container margin-bottom">
+				<img src="https://botanicalshaman.com/wp-content/uploads/2018/01/psychedelic-plant-identification-300x199.jpg" alt="Image2" style="width:100%" class="hover-opacity">
+				<div class="container white">
+					<p><b>Lorem Ipsum</b></p>
+					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+				</div>
+			</div>
+			<div class="third container">
+				<img src="https://i.pinimg.com/originals/a4/0e/d7/a40ed78dbf6dff5dad9fa750e811a5cd.jpg" alt="Image3" style="width:100%" class="hover-opacity">
+				<div class="container white">
+					<p><b>Lorem Ipsum</b></p>
+					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Second Photo Grid-->
+		<div class="row-padding">
+			<div class="third container margin-bottom">
+				<img src="https://miro.medium.com/max/2048/1*nca4M_dczQaeyQtWlhUYeQ.jpeg" alt="Image4" style="width:100%" class="hover-opacity">
+				<div class="container white">
+					<p><b>Lorem Ipsum</b></p>
+					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+				</div>
+			</div>
+			<div class="third container margin-bottom">
+				<img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Tabak_P9290021.JPG" alt="Image5" style="width:100%" class="hover-opacity">
+				<div class="container white">
+					<p><b>Lorem Ipsum</b></p>
+					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+				</div>
+			</div>
+			<div class="third container">
+				<img src="https://cdn.britannica.com/s:600x1000/33/137533-050-218ACFF8/Opium-poppy.jpg" alt="Image6" style="width:100%" class="hover-opacity">
+				<div class="container white">
+					<p><b>Lorem Ipsum</b></p>
+					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Pagination -->
+		<div class="center padding-32">
+			<div class="bar">
+				<a href="#" class="bar-item button hover-black">«</a>
+				<a href="#" class="bar-item black button">1</a>
+				<a href="#" class="bar-item button hover-black">2</a>
+				<a href="#" class="bar-item button hover-black">»</a>
+			</div>
+		</div>
+
+		<!-- End page content -->
+	</div>
+
+</body>
+</html>
