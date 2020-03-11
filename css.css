@@ -130,11 +130,11 @@ a{
 	padding: 0.01em 16px
 }
 
-.opacity,.hover-opacity:hover {
+.opacity,.hover-opacity:hover, .container:hover {
 	opacity: 0.60
 }
 
-.opacity-off,.hover-opacity-off:hover {
+.opacity-off,.hover-opacity-off:hover,.container-off:hover {
 	opacity: 1
 }
 
