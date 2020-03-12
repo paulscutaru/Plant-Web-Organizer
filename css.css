@@ -9,12 +9,18 @@ html,body{
 }
 
 h1{
-	font-size: 40px;
+	font-size: 48px;
 	content: ""; /* This is necessary for the pseudo element to work. */ 
     display: block; /* This will put the pseudo element on its own line. */
     margin: -100 auto; /* This will center the border. */
-    width: 200px; /* Change this to whatever width you want. */
-	border-bottom: 3mm ridge rgb(170, 50, 220, .6);
+    width:240px; /* Change this to whatever width you want. */
+	border-bottom: 1mm solid #ccc;
+	background: linear-gradient(-45deg, #ee7752, #B06DCB, #A749CD, #ee7752);
+  	background-size: 400% 400%;
+  	animation: gradient 15s ease infinite;
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+
 }
 h2{font-size:30px}
 h3{font-size:24px}
@@ -45,6 +51,7 @@ input[type=text] {
   margin-right: 16px;
   font-size: 17px;
 }
+
 input[type=text]:hover{
   background-color: lightgrey;
 }
@@ -289,6 +296,16 @@ input[type=text]:hover{
 	margin-left: 15px;
 }
 
-
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 
 
