@@ -2,28 +2,38 @@
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
 button,input,select,textarea,optgroup{font:inherit;margin:0}
 
-html,body{
+*{
 	font-family:"Segoe UI",Arial,sans-serif;margin:10px 0
-	font-size:15px;
-	line-height:1.5;
+	font-size: 15px;
+	line-height: 1.5 em;
 }
 
 h1{
 	font-size: 48px;
-	content: ""; /* This is necessary for the pseudo element to work. */ 
-    display: block; /* This will put the pseudo element on its own line. */
-    margin: -100 auto; /* This will center the border. */
-    width:240px; /* Change this to whatever width you want. */
+	content: "";  
+    display: block; 
+    margin: -100 auto; 
+    width:240px; 
 	border-bottom: 1mm solid #ccc;
 	background: linear-gradient(-45deg, #ee7752, #B06DCB, #A749CD, #ee7752);
   	background-size: 400% 400%;
   	animation: gradient 15s ease infinite;
   	-webkit-background-clip: text;
   	-webkit-text-fill-color: transparent;
-
 }
+
+
 h2{font-size:30px}
-h3{font-size:24px}
+h3{
+	font-size:24px;
+	margin-bottom: -15px;
+    margin: -100 auto; 
+	background: linear-gradient(-45deg, #ee7752, #B06DCB, #A749CD, #ee7752);
+  	background-size: 400% 400%;
+  	animation: gradient 15s ease infinite;
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+}
 h4{font-size:20px}
 h5{font-size:18px}
 h6{font-size:16px}
@@ -40,7 +50,7 @@ img{
 }
 
 a{
-	color:inherit
+	color:inherit;
 }
 
 input[type=text] {
@@ -48,7 +58,6 @@ input[type=text] {
   padding: 8px 16px 8px 8px;
   border: 1px solid grey;
   margin-top: 15px;
-  margin-right: 16px;
   font-size: 17px;
 }
 
@@ -66,8 +75,7 @@ input[type=text]:hover{
 .btn,.button{
 	border:none;
 	display:inline-block;
-	padding:8px 24px 8px 8px;
-	vertical-align:middle;
+	padding:12px 32px 12px 32px;
 	overflow:hidden;
 	text-decoration:none; 
 	color:inherit;
@@ -75,6 +83,49 @@ input[type=text]:hover{
 	text-align:center;
 	cursor:pointer;
 	white-space:nowrap;
+}
+
+.search,.button-submit{
+	padding:12px 12px 6px 12px;
+}
+.search{
+	margin-right: 81%;
+	margin-top: 20px;
+}
+
+
+
+
+.submenu{
+	overflow: hidden;
+}
+
+.submenu-content{
+	display: none;
+	position: absolute;
+	z-index: 1;
+	background-color: lightgrey;
+	opacity: 0.70;
+
+}
+
+.submenu:hover .submenu-content{
+	display: block;
+}
+
+.submenu-content a{
+	margin-left: 32px;
+	margin-right: 16px;
+	text-decoration: none;
+}
+
+.submenu-content a:hover{
+	color: white;
+}
+
+.submenu:hover .button{
+	background-color: lightgray;
+	opacity: 0.70;
 }
 
 .btn:hover{
@@ -115,7 +166,7 @@ input[type=text]:hover{
 	text-align:center
 }
 
-.container:after,.container:before,.row-padding:after,.row-padding:before,.clear:after,.bar:before,.bar:after{
+.categories:after,.categories:before,.row-padding:after,.row-padding:before,.clear:after,.bar:before,.bar:after{
 	content:"";
 	display:table;
 	clear:both
@@ -140,20 +191,17 @@ input[type=text]:hover{
 }
 
 .row-padding,.row-padding>.third{
-	padding: 0 8px
+	margin-top: 10px;
+	padding: 0 8px;
 }
 
-.container {
-	padding: 0.01em 16px
+.categories {
+	padding: 0 16px;
 }
 
-.opacity,.hover-opacity:hover, .third:hover {
+.hover-opacity:hover, .third:hover {
 	opacity: 0.60;
 	cursor: pointer;
-}
-
-.opacity-off,.hover-opacity-off:hover,.container-off:hover {
-	opacity: 1
 }
 
 .left-align {
@@ -168,20 +216,28 @@ input[type=text]:hover{
 	text-align: center
 }
 
-.bottombar {
-	border-bottom: 6px solid lightgrey
+.section {
+	display: flex;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	overflow: hidden;
 }
 
-.section {
-	margin-top: 16px;
-	margin-bottom: 16px
+.bottombar {
+	border-bottom: 6px solid lightgrey;
+}
+
+.topbar {
+	margin-top: 15px;
+	border-top: 6px solid lightgrey;
 }
 
 .margin {margin: 16px}
 .margin-top {margin-top: 16px}
 .margin-bottom {margin-bottom: 16px}
 .margin-left {margin-left: 16px}
-.margin-right {margin-right: 16px}
+.margin-left-more{margin-left: 90%}
+.margin-right {margin-right: 4px}
 
 .padding-small {padding: 4px 8px}
 .padding {padding: 8px 16px}
@@ -191,12 +247,6 @@ input[type=text]:hover{
 .padding-32 {padding-top: 32px;padding-bottom: 32px}
 .padding-48 {padding-top: 48px;padding-bottom: 48px}
 .padding-64 {padding-top: 64px;padding-bottom: 64px}
-
-.button:hover {
-	color: #000;
-	background-color: lightgrey;
-}
-
 
 /* Colors */
 
@@ -229,7 +279,7 @@ input[type=text]:hover{
 	color: #757575
 }
 
-/* Sidebar and Menu */
+/* Sidebar */
 
 .sidebar{
 	height:100%;
@@ -268,13 +318,18 @@ input[type=text]:hover{
 	font-size: 20px;
 	background-color: #a6a6a6;
 	color: white;
-	padding: 5px 5px;
+	padding: 10px 10px;
 	border: none;
 	top:165px;
 }
 
 .openbtn:hover {
-	background-color: rgb(170, 50, 220, .6);
+	color: white;
+	border: none;
+    display: block; 
+	background: linear-gradient(-45deg, #ee7752, #B06DCB, #A749CD, #ee7752);
+  	background-size: 400% 400%;
+  	animation: gradient 15s ease infinite;
 	cursor: pointer;
 }
 

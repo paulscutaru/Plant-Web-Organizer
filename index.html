@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css.css">
 <body class="light-grey content" style="max-width:1600px">
 
-	<!-- Sidebar/Menu -->
+	<!-- Sidebar -->
 	<nav>
 		<img src="icon.png" style="width:auto;" class="icon">
 
@@ -36,43 +36,106 @@
 		</script>
 	</nav>		
 	
-	<!-- !PAGE CONTENT! -->
+	<!-- PAGE CONTENT -->
 	<div class="principal" >
-		<!-- Header -->
-		<header style="margin-top: 0">
-			<div class="container">
+
+		<!-- Navigation -->
+		<nav>
+			<div class="margin-left">
 				<h1>HerbaWeb</h1>
-				<input type="text" placeholder="Search">
-				<div class="section bottombar padding-16">
-					<span class="margin-right">Effect:</span> 
-					<button class="button white"><i class="margin-right"></i>Sedative</button>
-					<button class="button white "><i class="margin-right"></i>Stimulant</button>
-					<button class="button white "><i class="margin-right"></i>Euphoric</button>
-					<button class="button white "><i class="margin-right"></i>Deliriant</button>
-					<button class="button white "><i class="margin-right"></i>Hallucinogenic</button>
+			</div>
+
+			<div class="margin-left">
+				<h3>Categories</h3>
+			</div>
+		
+			<div class="categories">
+
+				<div class="section padding-16">
+					<div class="submenu">
+						<button class="button white margin-right">Region<i class="fa fa-caret-down"></i></button>
+						<div class="submenu-content padding-16">
+							<a href="#europe">Europe</a>
+							<a href="#asia">Asia</a>
+							<a href="#america">America</a>
+							<a href="#australia">Australia</a>
+							<a href="#india">India</a>
+						</div>
+					</div>
+					<div class="submenu">
+						<button class="button white margin-right">Color<i class="fa fa-caret-down"></i></button>
+						<div class="submenu-content padding-16">
+							<a href="#blue">Blue</a>
+							<a href="#red">Red</a>
+							<a href="#yellow">Yellow</a>
+							<a href="#green">Green</a>
+							<a href="#">Purple</a>
+							<a href="#">White</a>
+						</div>
+					</div>
+					<div class="submenu">
+						<button class="button white margin-right">Uses<i class="fa fa-caret-down"></i></button>
+						<div class="submenu-content padding-16">
+							<a href="#food">Food</a>
+							<a href="#beverages">Beverages</a>
+							<a href="#medicine">Medicine</a>
+							<a href="#dye">Dye</a>
+							<a href="#fabrics">Fabrics</a>
+							<a href="#decoration">Decoration</a>
+						</div>
+					</div>
+					<div class="submenu">
+						<button class="button white margin-right">Effect<i class="fa fa-caret-down"></i></button>
+						<div class="submenu-content padding-16">
+							<a href="#none">None</a>
+							<a href="#sedative">Sedative</a>
+							<a href="#stimulant">Stimulant</a>
+							<a href="#euphoric">Euphoric</a>
+							<a href="#deliriant">Deliriant</a>
+							<a href="#hallucinogenic">Hallucinogenic</a>
+						</div>
+					</div>
+					<div class="submenu">
+						<button class="button white margin-right">Others</button>
+						<div class="submenu-content padding-16">
+							<a href="#">Link 1</a>
+							<a href="#">Link 2</a>
+							<a href="#">Link 3</a>
+						</div>
+					</div>
+				</div>
+				<div class="search">
+					<input type="text" placeholder="Search">
+							
 				</div>
 			</div>
-		</header>
+
+			<div class="button-submit margin-top">
+				<input type="submit" class="button white" placeholder="Submit">
+			</div>
+			
+		</nav>
 
 		<!-- First Photo Grid-->
+		<div class="topbar bottombar">
 		<div class="row-padding">
-			<div class="third container margin-bottom">
+			<div class="third categories margin-bottom">
 				<img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/purple-opium-poppy-tim-gainey.jpg" alt="Image1" style="width:100%" class="hover-opacity">
-				<div class="container white">
+				<div class="categories white">
 					<p><b>Lorem Ipsum</b></p>
 					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
 				</div>
 			</div>
-			<div class="third container margin-bottom">
+			<div class="third categories margin-bottom">
 				<img src="https://botanicalshaman.com/wp-content/uploads/2018/01/psychedelic-plant-identification-300x199.jpg" alt="Image2" style="width:100%" class="hover-opacity">
-				<div class="container white">
+				<div class="categories white">
 					<p><b>Lorem Ipsum</b></p>
 					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
 				</div>
 			</div>
-			<div class="third container">
+			<div class="third categories">
 				<img src="https://i.pinimg.com/originals/a4/0e/d7/a40ed78dbf6dff5dad9fa750e811a5cd.jpg" alt="Image3" style="width:100%" class="hover-opacity">
-				<div class="container white">
+				<div class="categories white">
 					<p><b>Lorem Ipsum</b></p>
 					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
 				</div>
@@ -81,29 +144,29 @@
 
 		<!-- Second Photo Grid-->
 		<div class="row-padding">
-			<div class="third container margin-bottom">
+			<div class="third categories margin-bottom">
 				<img src="https://miro.medium.com/max/2048/1*nca4M_dczQaeyQtWlhUYeQ.jpeg" alt="Image4" style="width:100%" class="hover-opacity">
-				<div class="container white">
+				<div class="categories white">
 					<p><b>Lorem Ipsum</b></p>
 					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
 				</div>
 			</div>
-			<div class="third container margin-bottom">
+			<div class="third categories margin-bottom">
 				<img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Tabak_P9290021.JPG" alt="Image5" style="width:100%" class="hover-opacity">
-				<div class="container white">
+				<div class="categories white">
 					<p><b>Lorem Ipsum</b></p>
 					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
 				</div>
 			</div>
-			<div class="third container">
+			<div class="third categories">
 				<img src="https://cdn.britannica.com/s:600x1000/33/137533-050-218ACFF8/Opium-poppy.jpg" alt="Image6" style="width:100%" class="hover-opacity">
-				<div class="container white">
+				<div class="categories white">
 					<p><b>Lorem Ipsum</b></p>
 					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
 				</div>
 			</div>
 		</div>
-
+	</div>
 		<!-- Pagination -->
 		<div class="center padding-32">
 			<div class="bar">
