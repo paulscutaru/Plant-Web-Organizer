@@ -23,7 +23,7 @@ h1{
 }
 
 
-h2{font-size:30px}
+h2{font-size:30px;}
 h3{
 	font-size:24px;
 	margin-bottom: -15px;
@@ -34,7 +34,14 @@ h3{
   	-webkit-background-clip: text;
   	-webkit-text-fill-color: transparent;
 }
-h4{font-size:20px}
+h4{
+	font-size:20px;
+	background: linear-gradient(-45deg, #ee7752, #B06DCB, #A749CD, #ee7752);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+}
 h5{font-size:18px}
 h6{font-size:16px}
 
@@ -53,13 +60,7 @@ a{
 	color:inherit;
 }
 
-input[type=text] {
-  float: right;
-  padding: 8px 16px 8px 8px;
-  border: 1px solid grey;
-  margin-top: 15px;
-  font-size: 17px;
-}
+
 
 input[type=text]:hover{
   background-color: lightgrey;
@@ -86,19 +87,24 @@ input[type=text]:hover{
 }
 
 .search,.button-submit{
-	padding:12px 12px 6px 12px;
+	padding:10px 12px 6px 16px;
+}
+.button-submit .button:hover{
+	background: lightgrey;
 }
 .search{
 	margin-right: 81%;
-	margin-top: 20px;
+	margin-top: 3%;
+}
+.search input[type="text"]
+{
+	float: right;
+	padding: 8px 16px 8px 8px;
+	border: 1px solid grey;
+	margin-top: 6%;
+	font-size: 17px;
 }
 
-
-
-
-.submenu{
-	overflow: hidden;
-}
 
 .submenu-content{
 	display: none;
@@ -218,8 +224,6 @@ input[type=text]:hover{
 
 .section {
 	display: flex;
-	margin-top: 16px;
-	margin-bottom: 16px;
 	overflow: hidden;
 }
 
@@ -345,10 +349,9 @@ input[type=text]:hover{
 }
 
 .icon{
-	height: 23%;
+	height: 25%;
+	left: 1%;
 	position: fixed;
-	top: 10px;
-	margin-left: 15px;
 }
 
 @keyframes gradient {
@@ -364,16 +367,13 @@ input[type=text]:hover{
 }
 
 .loginbox{
-
 	width: 290px;
 	height: 310px;
-	background: lightblue;
-	background-image: 
+	background: lightgrey;
 	color: #fff;
-	top:28%;
-	right:0%;
+	top:70px;
+	left:75%;
 	position: absolute;
-	transform: translate(-50%,-50%);
 	box-sizing:border-box;
 	padding:50px 30px;
 }
@@ -389,7 +389,7 @@ input[type=text]:hover{
 
 }
 
-h1{
+h3{
 	margin:0;
 	padding:0 0 20px;
 	text-align:center;
@@ -422,7 +422,7 @@ h1{
 	outline:none;
 	height: 30px;
 	width:60%;
-	background: #fb2525;
+	background: purple;
 	color: #fff;
 	font-size: 12px;
 	border-radius:15px;
@@ -430,21 +430,21 @@ h1{
 .loginbox input[type="submit"]:hover
 {
 	cursor:pointer;
-	background: #ffc107;
+	background: purple;
 	color:#000;
 
 }
 
 .loginbox a{
-	text-decoration: :none;
-	font-size: :12px;
+	text-decoration: none;
+	font-size: 12px;
 
 	line-height: 20px;
-	color:red;
+	color:black;
 
 }
 .loginbox a:hover{
 
-		color: #ffc107;
+		color: white;
 
 }
