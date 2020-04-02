@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HerbaWeb</title>
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<body class="light-grey content" style="max-width:1600px">
+
+	<!-- Sidebar -->
+	<nav>
+		<img src="icon.png"  class="icon">
+
+		<div>
+			<button class="openbtn" onclick="openNav()">☰ Open Menu</button>  
+		</div >
+
+
+		<div class="sidebar" id="mySidebar" >
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">  x  </a>
+			<a href="#about">About</a>
+			<a href="#">Services</a>
+			<a href="#">Clients</a>
+			<a href="index.html">Logout</a>
+		</div>
+
+		<script>
+			function openNav() {
+				document.getElementById("mySidebar").style.width = "201px";
+			}
+
+			function closeNav() {
+				document.getElementById("mySidebar").style.width = "0px";
+			}
+		</script>
+	</nav>		
+	
+	<!-- PAGE CONTENT -->
+	<div class="principal" >
+
+		<!-- Navigation -->
+		<nav>
+			<div class="margin-left">
+				<h1>HerbaWeb</h1>
+			</div>
+		
+			<div class="categories">
+				<div class="section">
+					<div class="submenu">
+						<h4 class="center">Region</h4>
+						<select id="region" class="options white padding"><i class="fa fa-caret-down"></i>
+							<option value="all-regions">All</option>
+							<option value="europe">Europe</option>
+							<option value="asia">Asia</option>
+							<option value="america">America</option>
+							<option value="australia">Australia</option>
+							<option value="india">India</option>
+						</select>
+					</div>
+					<div class="submenu">
+						<h4 class="center">Color</h4>
+						<select id="color" class="options white padding"><i class="fa fa-caret-down"></i>
+							<option value="all-colors">All</option>
+							<option value="blue">Blue</option>
+							<option value="red">Red</option>
+							<option value="yellow">Yellow</option>
+							<option value="green">Green</option>
+							<option value="purple">Purple</option>
+							<option value="pink">Pink</option>
+							<option value="white">White</option>
+							<option value="orange">Orange</option>
+						</select>
+					</div>
+					<div class="submenu">
+						<h4 class="center">Uses</h4>
+						<select id="uses" class="options white padding"><i class="fa fa-caret-down"></i>
+							<option value="all-uses">All</option>
+							<option value="food">Food</option>
+							<option value="beverages">Beverages</option>
+							<option value="medicine"">Medicine</option>
+							<option value="dye">Dye</option>
+							<option value="fabrics">Fabrics</option>
+							<option value="decoration">Decoration</option>
+						</select>
+					</div>
+					<div class="submenu ">
+						<h4 class="center">Effect</h4>
+						<select id="effect" class="options white padding"><i class="fa fa-caret-down"></i>
+							<option value="all-effects">All</option>
+							<option value="none">None</option>
+							<option value="sedative">Sedative</option>
+							<option value="stimulant">Stimulant</option>
+							<option value="euphoric">Euphoric</option>
+							<option value="deliriant">Deliriant</option>
+						</select>
+					</div>
+					<div class="submenu">
+						<h4 class="center">Other</h4>
+						<select id="other" class="options white padding "><i class="fa fa-caret-down"></i>
+							<option value="all-other">All</option>
+							<option value="rare">Rare</option>
+							<option value="protected">Protected</option>
+						</select>
+					</div>
+					
+				</div>
+				
+				<div class="search">
+					<p>Search name:</p>
+					<input type="text" placeholder=" Search">	
+				</div>
+
+				<div class="sortby">
+					<p>Sort by:</p>
+					<select id="sort"><i class="fa fa-caret-down"></i>
+						<option value="none">-</option>
+						<option value="rarity">Rarity</option>
+					</select>	
+				</div>
+			</div>
+
+			<div>
+				<input type="submit" title="Press this button after you have completed all fields!" class="margin-left white button-submit" placeholder="Submit">
+			</div>
+			
+		</nav>
+
+		<!-- First Photo Grid-->
+		<div class="topbar bottombar">
+		<div class="row-padding">
+			<div class="third categories margin-bottom">
+				<img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/purple-opium-poppy-tim-gainey.jpg" alt="Image1" style="width:100%" class="hover-opacity">
+				<div class="categories white">
+					<p><b>Lorem Ipsum</b></p>
+					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+				</div>
+			</div>
+			<div class="third categories margin-bottom">
+				<img src="https://botanicalshaman.com/wp-content/uploads/2018/01/psychedelic-plant-identification-300x199.jpg" alt="Image2" style="width:100%" class="hover-opacity">
+				<div class="categories white">
+					<p><b>Lorem Ipsum</b></p>
+					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+				</div>
+			</div>
+			<div class="third categories">
+				<img src="https://i.pinimg.com/originals/a4/0e/d7/a40ed78dbf6dff5dad9fa750e811a5cd.jpg" alt="Image3" style="width:100%" class="hover-opacity">
+				<div class="categories white">
+					<p><b>Lorem Ipsum</b></p>
+					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Second Photo Grid-->
+		<div class="row-padding">
+			<div class="third categories margin-bottom">
+				<img src="https://miro.medium.com/max/2048/1*nca4M_dczQaeyQtWlhUYeQ.jpeg" alt="Image4" style="width:100%" class="hover-opacity">
+				<div class="categories white">
+					<p><b>Lorem Ipsum</b></p>
+					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+				</div>
+			</div>
+			<div class="third categories margin-bottom">
+				<img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Tabak_P9290021.JPG" alt="Image5" style="width:100%" class="hover-opacity">
+				<div class="categories white">
+					<p><b>Lorem Ipsum</b></p>
+					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+				</div>
+			</div>
+			<div class="third categories">
+				<img src="https://cdn.britannica.com/s:600x1000/33/137533-050-218ACFF8/Opium-poppy.jpg" alt="Image6" style="width:100%" class="hover-opacity">
+				<div class="categories white">
+					<p><b>Lorem Ipsum</b></p>
+					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+		<!-- Pagination -->
+		<div class="center padding-32">
+			<div class="bar">
+				<a href="#" class="bar-item button hover-black">«</a>
+				<a href="#" class="bar-item black button">1</a>
+				<a href="#" class="bar-item button hover-black">2</a>
+				<a href="#" class="bar-item button hover-black">3</a>
+				<a href="#" class="bar-item button hover-black">4</a>
+				<a href="#" class="bar-item button hover-black">»</a>
+			</div>
+		</div>
+
+		<!-- Bottom box -->
+		<div class="bottombox topbar bottombar">
+			<!-- Top most popular plants-->
+			<div class="padding-16 listbox">
+				<h4 class="margin-left">Top 5 most popular plants:</h4>
+				<ol class="list">
+					<li class="padding"><a href="#plant1" class="top5-element">Plant</a></li>
+					<li class="padding"><a href="#plant2" class="top5-element">Plant</a></li>
+					<li class="padding"><a href="#plant3" class="top5-element">Plant</a></li>
+					<li class="padding"><a href="#plant4" class="top5-element">Plant</a></li>
+					<li class="padding"><a href="#plant5" class="top5-element">Plant</a></li>
+				</ol>
+			</div>
+
+		</div>
+
+		<!-- End page content -->
+	</div>
+
+	
+	
+</body>
+</html>
