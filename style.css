@@ -2,6 +2,9 @@
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
 button,input,select,textarea,optgroup{font:inherit;margin:0}
 
+body{
+	float: left;	
+}
 *{
 	font-family:"Segoe UI",Arial,sans-serif;
 	margin:10px 0;
@@ -154,16 +157,29 @@ input[type=text]:hover{
 	text-align:center
 }
 
-.categories:after,.categories:before,.row-padding:after,.row-padding:before,.clear:after,.bar:before,.bar:after{
+.categories:after,.categories:before,.bar:before,.bar:after{
 	content:"";
 	display:table;
 	clear:both;
 }
 
-.third {
-	float: left;
-	width: 33.3333333%
+/*-------------TABLE OF PLANTS-----------*/
+.scrollable table{
+	text-align: center;
+	background: white;
+	border: lightgrey solid 2px;
+	width: 100%;
 }
+.scrollable td{
+	width: 100px;
+	border: lightgrey solid 2px;
+}
+.scrollable img{
+	height: 200px;
+	width: 200px;
+	border: black solid 2px;
+}
+ /*---------------------------------*/
 
 .content{
 	margin-left: auto;
@@ -178,16 +194,11 @@ input[type=text]:hover{
 	display: none
 }
 
-.row-padding,.row-padding>.third{
-	margin-top: 10px;
-	padding: 0 8px;
-}
-
 .categories {
 	padding: 0 16px;
 }
 
-.hover-opacity:hover, .third:hover {
+.hover-opacity:hover{
 	opacity: 0.60;
 	cursor: pointer;
 }
@@ -216,6 +227,13 @@ input[type=text]:hover{
 .topbar {
 	margin-top: 40px;
 	border-top: 6px solid lightgrey;
+}
+
+.scrollable{
+	height: 1000px; 
+	overflow-x: hidden; 
+    overflow-x: auto; 
+    text-align:justify; 
 }
 
 .margin {margin: 16px}
@@ -300,13 +318,13 @@ input[type=text]:hover{
 
 .openbtn {
 	position: fixed;
-	width: 200px;
+	width: 13%;
 	font-size: 20px;
 	background-color: #a6a6a6;
 	color: white;
 	padding: 10px 10px;
 	border: none;
-	top:180px;
+	top:28%;
 }
 
 .openbtn:hover {
@@ -320,14 +338,14 @@ input[type=text]:hover{
 }
 
 .closebtn:hover{
-	color : red;
 	cursor: pointer;
 }
 .principal{
-	margin-right: 50px;
-	margin-left: 250px;
+	margin-right: 5%;
+	margin-left: 17%;
 	top:25px;
 	position: absolute;
+	width: 80%;
 }
 
 .icon{
@@ -354,8 +372,8 @@ input[type=text]:hover{
 	background: lightgrey;
 	color: #fff;
 	top:50px;
-	left:300px;
-	position: absolute;
+	left:37%;
+	position: fixed;
 	box-sizing:border-box;
 	padding:50px 30px;
 }
@@ -419,7 +437,6 @@ h3{
 }
 
 .loginbox a{
-	
 	text-decoration: none;
 	font-size: 14px;
 	line-height: 25px;
@@ -448,4 +465,27 @@ h3{
 }
 .top5-element:hover{
 	color: purple;
+}
+
+
+
+/*_--------Manage page--------*/
+.managebox{
+	width: 450px;
+	height: 650px;
+	background: white;
+	left: 37%;
+	position: fixed;
+	border: #000 solid 1px;
+	padding:50px 30px;
+}
+.manageform{
+	display: block;
+}
+.managebox input{
+	background:#F0F0F0;	
+	border:none;
+	padding:6px 8px 6px 8px;
+	text-decoration:none; 
+	cursor: pointer;
 }

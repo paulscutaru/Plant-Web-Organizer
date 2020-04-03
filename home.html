@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>HerbaWeb</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
 </head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
 <body class="light-grey content" style="max-width:1600px">
 
 	<!-- Sidebar -->
 	<nav>
-		<img src="icon.png"  class="icon">
+		<div>
+			<img src="icon.png" alt="icon.png"  class="icon">
+		</div>
+		
 
 		<div>
 			<button class="openbtn" onclick="openNav()">☰ Open Menu</button>  
@@ -19,8 +22,8 @@
 
 		<div class="sidebar" id="mySidebar" >
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">  x  </a>
+			<a href="manage.html">Add plants</a>
 			<a href="#about">About</a>
-			<a href="#">Services</a>
 			<a href="#">Clients</a>
 			<a href="index.html">Logout</a>
 		</div>
@@ -45,11 +48,12 @@
 				<h1>HerbaWeb</h1>
 			</div>
 		
+			<form action="filter.php" method="post">
 			<div class="categories">
 				<div class="section">
 					<div class="submenu">
 						<h4 class="center">Region</h4>
-						<select id="region" class="options white padding"><i class="fa fa-caret-down"></i>
+						<select id="region" class="options white padding">
 							<option value="all-regions">All</option>
 							<option value="europe">Europe</option>
 							<option value="asia">Asia</option>
@@ -60,7 +64,7 @@
 					</div>
 					<div class="submenu">
 						<h4 class="center">Color</h4>
-						<select id="color" class="options white padding"><i class="fa fa-caret-down"></i>
+						<select id="color" class="options white padding">
 							<option value="all-colors">All</option>
 							<option value="blue">Blue</option>
 							<option value="red">Red</option>
@@ -74,11 +78,11 @@
 					</div>
 					<div class="submenu">
 						<h4 class="center">Uses</h4>
-						<select id="uses" class="options white padding"><i class="fa fa-caret-down"></i>
+						<select id="uses" class="options white padding">
 							<option value="all-uses">All</option>
 							<option value="food">Food</option>
 							<option value="beverages">Beverages</option>
-							<option value="medicine"">Medicine</option>
+							<option value="medicine">Medicine</option>
 							<option value="dye">Dye</option>
 							<option value="fabrics">Fabrics</option>
 							<option value="decoration">Decoration</option>
@@ -86,7 +90,7 @@
 					</div>
 					<div class="submenu ">
 						<h4 class="center">Effect</h4>
-						<select id="effect" class="options white padding"><i class="fa fa-caret-down"></i>
+						<select id="effect" class="options white padding">
 							<option value="all-effects">All</option>
 							<option value="none">None</option>
 							<option value="sedative">Sedative</option>
@@ -97,7 +101,7 @@
 					</div>
 					<div class="submenu">
 						<h4 class="center">Other</h4>
-						<select id="other" class="options white padding "><i class="fa fa-caret-down"></i>
+						<select id="other" class="options white padding ">
 							<option value="all-other">All</option>
 							<option value="rare">Rare</option>
 							<option value="protected">Protected</option>
@@ -113,81 +117,117 @@
 
 				<div class="sortby">
 					<p>Sort by:</p>
-					<select id="sort"><i class="fa fa-caret-down"></i>
+					<select id="sort">
 						<option value="none">-</option>
-						<option value="rarity">Rarity</option>
+						<option value="rarity">Date</option>
 					</select>	
 				</div>
 			</div>
 
 			<div>
-				<input type="submit" title="Press this button after you have completed all fields!" class="margin-left white button-submit" placeholder="Submit">
+				<input type="submit" title="Press this button after you have completed all fields!" class="margin-left white button-submit">
 			</div>
-			
+		</form>
 		</nav>
 
-		<!-- First Photo Grid-->
-		<div class="topbar bottombar">
-		<div class="row-padding">
-			<div class="third categories margin-bottom">
-				<img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/purple-opium-poppy-tim-gainey.jpg" alt="Image1" style="width:100%" class="hover-opacity">
-				<div class="categories white">
-					<p><b>Lorem Ipsum</b></p>
-					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-				</div>
-			</div>
-			<div class="third categories margin-bottom">
-				<img src="https://botanicalshaman.com/wp-content/uploads/2018/01/psychedelic-plant-identification-300x199.jpg" alt="Image2" style="width:100%" class="hover-opacity">
-				<div class="categories white">
-					<p><b>Lorem Ipsum</b></p>
-					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-				</div>
-			</div>
-			<div class="third categories">
-				<img src="https://i.pinimg.com/originals/a4/0e/d7/a40ed78dbf6dff5dad9fa750e811a5cd.jpg" alt="Image3" style="width:100%" class="hover-opacity">
-				<div class="categories white">
-					<p><b>Lorem Ipsum</b></p>
-					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-				</div>
-			</div>
-		</div>
+		<!-- Table of plants-->
+	<div class="topbar bottombar scrollable">
+		<table>
+			<tr>
+				<th colspan="9"	><h2>My plants</h2></th> 
+			</tr>
+			<tr>
+				<th>ID</th>
+				<th>Photo</th>
+				<th>Name</th>
+				<th>Date</th>
+				<th>Region</th>
+				<th>Color</th>
+				<th>Uses</th>
+				<th>Effect</th>
+				<th>Others</th>
 
-		<!-- Second Photo Grid-->
-		<div class="row-padding">
-			<div class="third categories margin-bottom">
-				<img src="https://miro.medium.com/max/2048/1*nca4M_dczQaeyQtWlhUYeQ.jpeg" alt="Image4" style="width:100%" class="hover-opacity">
-				<div class="categories white">
-					<p><b>Lorem Ipsum</b></p>
-					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-				</div>
-			</div>
-			<div class="third categories margin-bottom">
-				<img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Tabak_P9290021.JPG" alt="Image5" style="width:100%" class="hover-opacity">
-				<div class="categories white">
-					<p><b>Lorem Ipsum</b></p>
-					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-				</div>
-			</div>
-			<div class="third categories">
-				<img src="https://cdn.britannica.com/s:600x1000/33/137533-050-218ACFF8/Opium-poppy.jpg" alt="Image6" style="width:100%" class="hover-opacity">
-				<div class="categories white">
-					<p><b>Lorem Ipsum</b></p>
-					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-				</div>
-			</div>
-		</div>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><img src="images/photo1.jpg" alt="" ></img></td>
+				<td>Plant</td>
+				<td>04/04/2020</td>
+				<td>Europe</td>
+				<td>Blue</td>
+				<td>Medicinal</td>
+				<td>None</td>
+				<td>Protected</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><img src="images/photo2.jpg" alt="" ></img></td>
+				<td>Plant</td>
+				<td>04/04/2020</td>
+				<td>Europe</td>
+				<td>Blue</td>
+				<td>Medicinal</td>
+				<td>None</td>
+				<td>Protected</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><img src="images/photo3.jpg.jpg" alt="" ></img></td>
+				<td>Plant</td>
+				<td>04/04/2020</td>
+				<td>Europe</td>
+				<td>Blue</td>
+				<td>Medicinal</td>
+				<td>None</td>
+				<td>Protected</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td><img src="images/photo4.jpg.jpg" alt="" ></img></td>
+				<td>Plant</td>
+				<td>04/04/2020</td>
+				<td>Europe</td>
+				<td>Blue</td>
+				<td>Medicinal</td>
+				<td>None</td>
+				<td>Protected</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td><img src="images/photo5.jpg.jpg" alt="" ></img></td>
+				<td>Plant</td>
+				<td>04/04/2020</td>
+				<td>Europe</td>
+				<td>Blue</td>
+				<td>Medicinal</td>
+				<td>None</td>
+				<td>Protected</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td><img src="images/photo6.jpg.jpg" alt="" ></img></td>
+				<td>Plant</td>
+				<td>04/04/2020</td>
+				<td>Europe</td>
+				<td>Blue</td>
+				<td>Medicinal</td>
+				<td>None</td>
+				<td>Protected</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td><img src="images/photo7.jpg.jpg" alt="" ></img></td>
+				<td>Plant</td>
+				<td>04/04/2020</td>
+				<td>Europe</td>
+				<td>Blue</td>
+				<td>Medicinal</td>
+				<td>None</td>
+				<td>Protected</td>
+			</tr>
+		</table>
 	</div>
-		<!-- Pagination -->
-		<div class="center padding-32">
-			<div class="bar">
-				<a href="#" class="bar-item button hover-black">«</a>
-				<a href="#" class="bar-item black button">1</a>
-				<a href="#" class="bar-item button hover-black">2</a>
-				<a href="#" class="bar-item button hover-black">3</a>
-				<a href="#" class="bar-item button hover-black">4</a>
-				<a href="#" class="bar-item button hover-black">»</a>
-			</div>
-		</div>
+		
 
 		<!-- Bottom box -->
 		<div class="bottombox topbar bottombar">
