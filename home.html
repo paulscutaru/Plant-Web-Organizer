@@ -23,8 +23,8 @@
 		<div class="sidebar" id="mySidebar" >
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">  x  </a>
 			<a href="manage.html">Add plants</a>
+			<a href="albums.html">Albums</a>
 			<a href="#about">About</a>
-			<a href="#">Clients</a>
 			<a href="index.html">Logout</a>
 		</div>
 
@@ -80,23 +80,13 @@
 						<h4 class="center">Uses</h4>
 						<select id="uses" class="options white padding">
 							<option value="all-uses">All</option>
+							<option value="none">None</option>
 							<option value="food">Food</option>
 							<option value="beverages">Beverages</option>
 							<option value="medicine">Medicine</option>
 							<option value="dye">Dye</option>
 							<option value="fabrics">Fabrics</option>
 							<option value="decoration">Decoration</option>
-						</select>
-					</div>
-					<div class="submenu ">
-						<h4 class="center">Effect</h4>
-						<select id="effect" class="options white padding">
-							<option value="all-effects">All</option>
-							<option value="none">None</option>
-							<option value="sedative">Sedative</option>
-							<option value="stimulant">Stimulant</option>
-							<option value="euphoric">Euphoric</option>
-							<option value="deliriant">Deliriant</option>
 						</select>
 					</div>
 					<div class="submenu">
@@ -129,12 +119,13 @@
 			</div>
 		</form>
 		</nav>
-
+		
 		<!-- Table of plants-->
 	<div class="topbar bottombar scrollable">
 		<table>
 			<tr>
-				<th colspan="9"	><h2>My plants</h2></th> 
+				<th colspan="9"	><h2>My plants</h2></th>
+				
 			</tr>
 			<tr>
 				<th>ID</th>
@@ -144,9 +135,8 @@
 				<th>Region</th>
 				<th>Color</th>
 				<th>Uses</th>
-				<th>Effect</th>
 				<th>Others</th>
-
+				<th>Settings</th>
 			</tr>
 			<tr>
 				<td>1</td>
@@ -156,8 +146,12 @@
 				<td>Europe</td>
 				<td>Blue</td>
 				<td>Medicinal</td>
-				<td>None</td>
 				<td>Protected</td>
+				<td>
+					<button class="button-addToAlbum" id="">Add to..</button>
+					<button class="button-info" id="">Info</button>
+					<button class="button-delete" id="">Delete</button>
+				</td>
 			</tr>
 			<tr>
 				<td>2</td>
@@ -167,8 +161,12 @@
 				<td>Europe</td>
 				<td>Blue</td>
 				<td>Medicinal</td>
-				<td>None</td>
-				<td>Protected</td>
+				<td>Protected</td>			
+				<td>
+					<button class="button-addToAlbum" id="">Add to..</button>
+					<button class="button-info" id="">Info</button>
+					<button class="button-delete" id="">Delete</button>
+				</td>
 			</tr>
 			<tr>
 				<td>3</td>
@@ -178,8 +176,12 @@
 				<td>Europe</td>
 				<td>Blue</td>
 				<td>Medicinal</td>
-				<td>None</td>
-				<td>Protected</td>
+				<td>Protected</td>				
+				<td>
+					<button class="button-addToAlbum" id="">Add to..</button>
+					<button class="button-info" id="">Info</button>
+					<button class="button-delete" id="">Delete</button>
+				</td>			
 			</tr>
 			<tr>
 				<td>4</td>
@@ -189,8 +191,12 @@
 				<td>Europe</td>
 				<td>Blue</td>
 				<td>Medicinal</td>
-				<td>None</td>
 				<td>Protected</td>
+				<td>
+					<button class="button-addToAlbum" id="">Add to..</button>
+					<button class="button-info" id="">Info</button>
+					<button class="button-delete" id="">Delete</button>
+				</td>			
 			</tr>
 			<tr>
 				<td>5</td>
@@ -200,8 +206,12 @@
 				<td>Europe</td>
 				<td>Blue</td>
 				<td>Medicinal</td>
-				<td>None</td>
 				<td>Protected</td>
+				<td>
+					<button class="button-addToAlbum" id="">Add to..</button>
+					<button class="button-info" id="">Info</button>
+					<button class="button-delete" id="">Delete</button>
+				</td>			
 			</tr>
 			<tr>
 				<td>6</td>
@@ -211,8 +221,12 @@
 				<td>Europe</td>
 				<td>Blue</td>
 				<td>Medicinal</td>
-				<td>None</td>
 				<td>Protected</td>
+				<td>
+					<button class="button-addToAlbum" id="">Add to..</button>
+					<button class="button-info" id="">Info</button>
+					<button class="button-delete" id="">Delete</button>
+				</td>	
 			</tr>
 			<tr>
 				<td>7</td>
@@ -222,8 +236,12 @@
 				<td>Europe</td>
 				<td>Blue</td>
 				<td>Medicinal</td>
-				<td>None</td>
 				<td>Protected</td>
+				<td>
+					<button class="button-addToAlbum" id="">Add to..</button>
+					<button class="button-info" id="">Info</button>
+					<button class="button-delete" id="">Delete</button>
+				</td>			
 			</tr>
 		</table>
 	</div>

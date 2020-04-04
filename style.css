@@ -9,7 +9,6 @@ body{
 	font-family:"Segoe UI",Arial,sans-serif;
 	margin:10px 0;
 	font-size: 15px;
-	line-height: 1.5 em;
 }
 
 h1{
@@ -27,7 +26,7 @@ h1{
 }
 
 
-h2{font-size:30px;}
+h2{font-size:30px; margin-bottom: 40px; margin-top: 40px;}
 h3{
 	font-size:24px;
 	margin-bottom: -15px;
@@ -56,7 +55,6 @@ hr{
 }
 
 img{
-	height:350px;  
 	vertical-align:middle
 }
 
@@ -77,7 +75,7 @@ input[type=text]:hover{
 	height:auto
 }
 
-.btn,.button{
+.button{
 	border:none;
 	display:inline-block;
 	padding:12px 32px 12px 32px;
@@ -119,48 +117,23 @@ input[type=text]:hover{
 }
 
 
-.btn:hover{
-	box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
-}
-
-.bar{
-	width:100%;
-	overflow:hidden
-}
-
 .center .bar{
 	display:inline-block;
 	width:auto
 }
 
-.bar .bar-item{
-	padding:8px 16px;
-	float:left;
-	width:auto;
-	border:none;
-	display:block;
-	outline:0
-}
 
-.bar-item{
-	width:100%;
-	display:block;
-	padding:8px 16px;
-	text-align:left;
-	border:none;
-	white-space:normal;
-	float:none;
-	outline:0
-}
 
-.center .bar-item{
-	text-align:center
-}
-
-.categories:after,.categories:before,.bar:before,.bar:after{
+.categories:after,.categories:before{
 	content:"";
 	display:table;
 	clear:both;
+}
+
+.delete{
+	position: absolute;
+	left: 75%;
+	top: 28%;
 }
 
 /*-------------TABLE OF PLANTS-----------*/
@@ -171,13 +144,48 @@ input[type=text]:hover{
 	width: 100%;
 }
 .scrollable td{
-	width: 100px;
+	width: 110px;
 	border: lightgrey solid 2px;
 }
+
 .scrollable img{
-	height: 200px;
-	width: 200px;
+	height: 120px;
+	width: 120px;
 	border: black solid 2px;
+}
+
+.button-addToAlbum{
+	margin-bottom: 10px;
+	border:lightgrey solid 1px;
+	text-decoration:none; 
+	text-align:center;
+	cursor:pointer;
+}
+.button-addToAlbum:hover{
+	background-color: rgb(154, 238, 146);
+}
+
+.button-delete{
+	border:lightgrey solid 1px;
+	text-decoration:none; 
+	text-align:center;
+	cursor:pointer;
+}
+.button-delete:hover{
+	background-color: rgb(253, 164, 164);
+}
+
+.button-info{
+	margin-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border:lightgrey solid 1px;
+	text-decoration:none; 
+	text-align:center;
+	cursor:pointer;
+}
+.button-info:hover{
+	background-color: rgb(154, 238, 146);
 }
  /*---------------------------------*/
 
@@ -283,7 +291,7 @@ input[type=text]:hover{
 	color: #757575
 }
 
-/* Sidebar */
+/*---------------Sidebar-----------*/
 
 .sidebar{
 	height:100%;
@@ -340,12 +348,14 @@ input[type=text]:hover{
 .closebtn:hover{
 	cursor: pointer;
 }
+
+/*--------------------------*/
+
 .principal{
-	margin-right: 5%;
 	margin-left: 17%;
-	top:25px;
+	top:45px;
 	position: absolute;
-	width: 80%;
+	width: 77%;
 }
 
 .icon{
@@ -366,6 +376,7 @@ input[type=text]:hover{
 	}
 }
 
+/*------------Login box--------------*/
 .loginbox{
 	width: 420px;
 	height: 520px;
@@ -467,9 +478,7 @@ h3{
 	color: purple;
 }
 
-
-
-/*_--------Manage page--------*/
+/*_--------Manage box--------*/
 .managebox{
 	width: 450px;
 	height: 650px;
