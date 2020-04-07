@@ -62,18 +62,12 @@ a{
 	color:inherit;
 }
 
-
-
 input[type=text]:hover{
   cursor: text;
 }
 
 /*-------------------------*/
 
-.image{
-	max-width:100%;
-	height:auto
-}
 
 .button{
 	border:none;
@@ -145,7 +139,7 @@ input[type=text]:hover{
 	width: 100%;
 }
 .scrollable td{
-	width: 110px;
+	width: 10%;
 	border: lightgrey solid 2px;
 }
 
@@ -296,7 +290,7 @@ input[type=text]:hover{
 	color: #757575
 }
 
-/*---------------Sidebar-----------*/
+/*---------------Sidebar/menu home page-----------*/
 
 .sidebar{
 	height:100%;
@@ -383,8 +377,8 @@ input[type=text]:hover{
 
 /*------------Login box--------------*/
 .loginbox{
-	width: 420px;
-	height: 520px;
+	width: 27%;
+	height: 70%;
 	background: lightgrey;
 	color: #fff;
 	top:50px;
@@ -400,9 +394,8 @@ input[type=text]:hover{
 	height:100px;
 	border-radius: 50%;
 	position:absolute;
-	top:-60px;
+	top:-13%;
 	left:calc(50% - 50px); 
-
 }
 
 h3{
@@ -422,6 +415,10 @@ h3{
 	width:100%;
 	margin-bottom: 10px;
 }
+.loginbox p{
+	width:100%;
+	margin-bottom: 5px;
+}
 .loginbox input[type="text"], input[type="password"]
 {
 	border: none;
@@ -429,6 +426,7 @@ h3{
 	background: transparent;
 	outline: none;
 	height: 40px;
+	width: 100%;
 	color:black;
 	font-size: 14px;
 
@@ -464,12 +462,12 @@ h3{
 
 }
 
-/*_--------Bottom box--------*/
+/*_--------Bottom box for top 5 list, home page--------*/
 .bottombox{
 	width: 100%;
 	background: white;
 }
-/*---------Top 5 list---------*/
+/*---------Top 5 list home page---------*/
 .listbox{
 	width: 100%;
 	height: 100%;
@@ -481,14 +479,14 @@ h3{
 	color: purple;
 }
 
-/*_--------Manage box--------*/
+/*--------Manage box for 'Add plants' page --------*/
 .managebox{
 	width: 28%;
 	height: 86%;
 	background: lightgrey;
 	left: 37%;
 	position: fixed;
-	border: #000 solid 1px;
+	border: none;
 	padding:50px 30px;
 }
 .manageform{
@@ -496,7 +494,7 @@ h3{
 }
 .managebox input{
 	background:white;	
-	border:none;
+	border:grey 1px solid;
 	padding:6px 8px 6px 8px;
 	text-decoration:none; 
 }
@@ -510,9 +508,7 @@ h3{
 	display: flex;
 }
 
-
 /*--------------Sidebar Album---------*/
-
 .sidebar{
 	height:100%;
 	width: 0;
