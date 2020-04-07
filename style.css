@@ -498,3 +498,119 @@ h3{
 	text-decoration:none; 
 	cursor: pointer;
 }
+
+/*--------------Sidebar Album---------*/
+
+
+
+
+
+.sidebar{
+	height:100%;
+	width: 0;
+	background-color:#fff;
+	position:fixed;
+	z-index:1;
+	overflow:auto; 
+	top: 164px;
+}
+
+.sidebar a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+}
+
+.sidebar a:hover {
+	 color: rgb(170, 50, 220, .6);
+	 cursor: pointer;
+}
+
+.sidebar .closebtn {
+	position: absolute;
+	top: -10px;
+	right: 5px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+.openbtn {
+	position: fixed;
+	width: 13%;
+	font-size: 20px;
+	background-color: #a6a6a6;
+	color: white;
+	padding: 10px 10px;
+	border: none;
+	top:28%;
+}
+
+.openbtn:hover {
+	color: white;
+	border: none;
+    display: block; 
+	background: linear-gradient(-45deg, #ee7752, #B06DCB, #A749CD, #ee7752);
+  	background-size: 400% 400%;
+  	animation: gradient 15s ease infinite;
+	cursor: pointer;
+}
+
+.closebtn:hover{
+	cursor: pointer;
+}
+
+.categoriesalb:after,.categoriesalb:before{
+	content:"";
+	display:table;
+	clear:both;
+}
+
+
+
+
+
+
+
+/*------------Add Album--------------*/
+
+.principalalb{
+	margin-left: 17%;
+	top:45px;
+	position: absolute;
+	width: 77%;
+}
+
+.manageboxalb{
+	width: 450px;
+	height: 650px;
+	background: white;
+	left: 37%;
+	position: fixed;
+	border: #000 solid 1px;
+	padding:50px 50px;
+}
+.manageformalb{
+	display: block;
+}
+.manageboxalb input{
+	background:#F0F0F0;	
+	border:none;
+	padding:6px 8px 6px 8px;
+	text-decoration:none; 
+	cursor: pointer;
+}
+.submenualb select{
+	margin-right: 2px;
+    cursor: pointer;
+}
+.sectionalb {
+	display: flex;
+	border:none;
+}
+.categoriesalb:after,.categoriesalb:before{
+	content:"";
+	display:table;
+	clear:both;
+}

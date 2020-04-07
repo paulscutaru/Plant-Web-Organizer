@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>HerbaWeb</title>
+	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+		<div>
+			<img src="icon.png" alt="icon.png"  class="icon">
+		</div>
+		
+
+		<div>
+			<button class="openbtn" onclick="openNav()">☰ Open Album Menu</button>  
+		</div >
+
+
+		<div class="sidebar" id="mySidebar" >
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">  x  </a>
+			<a href="addalbum.html">Add album</a>
+			<a href="albums.html">Manage my albums</a>
+			<a href="home.html">Main page</a>
+		</div>
+
+		<script>
+			function openNav() {
+				document.getElementById("mySidebar").style.width = "201px";
+			}
+
+			function closeNav() {
+				document.getElementById("mySidebar").style.width = "0px";
+			}
+		</script>
+	</nav>
+
+</body>
+</html>

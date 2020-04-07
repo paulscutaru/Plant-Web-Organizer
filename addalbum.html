@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>HerbaWeb</title>
+	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body class="light-grey content" style="max-width:1600px">
+
+	<!-- Sidebar -->
+	
+	<img src="icon.png" alt="icon.png" class="icon margin-left">
+	
+	
+	<!-- PAGE CONTENT -->
+	<div class="principalalb" >
+    
+		<!-- Add album -->
+	<div class="manageboxalb">
+		<h3>ADD ALBUM</h3>
+		<div class="categoriesalb">
+			<div class="sectionalb">
+        
+
+        <form action="albums.html" method="post" class="manageformalb" enctype="multipart/form-data">
+            <p>Select image to upload:</p>
+            <input type="file" name="imageToUpload" id="imageToUpload">
+            <div class="submenualb">
+						<h4 class="centeralb">Region</h4>
+						<select id="region" class="options white padding">
+							<option value="all-regions">All</option>
+							<option value="europe">Europe</option>
+							<option value="asia">Asia</option>
+							<option value="america">America</option>
+							<option value="australia">Australia</option>
+							<option value="india">India</option>
+						</select>
+					</div>
+			<div class="submenualb">
+						<h4 class="centeralb">Color</h4>
+						<select id="color" class="options white padding">
+							<option value="all-colors">All</option>
+							<option value="blue">Blue</option>
+							<option value="red">Red</option>
+							<option value="yellow">Yellow</option>
+							<option value="green">Green</option>
+							<option value="purple">Purple</option>
+							<option value="pink">Pink</option>
+							<option value="white">White</option>
+							<option value="orange">Orange</option>
+						</select>
+					</div>
+            <div class="submenualb">
+						<h4 class="centeralb">Uses</h4>
+						<select id="uses" class="options white padding">
+							<option value="all-uses">All</option>
+							<option value="none">None</option>
+							<option value="food">Food</option>
+							<option value="beverages">Beverages</option>
+							<option value="medicine">Medicine</option>
+							<option value="dye">Dye</option>
+							<option value="fabrics">Fabrics</option>
+							<option value="decoration">Decoration</option>
+						</select>
+					</div>
+					<div class="submenualb">
+						<h4 class="centeralb">Other</h4>
+						<select id="other" class="options white padding ">
+							<option value="all-other">All</option>
+							<option value="rare">Rare</option>
+							<option value="protected">Protected</option>
+						</select>
+					</div>
+            <input type="submit" value="Upload" name="submit">
+        </form>
+    </div>
+    </div>
+	</div>		
+	</div>
+
+	
+</body>
+</html>
