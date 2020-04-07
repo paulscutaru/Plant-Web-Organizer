@@ -65,7 +65,7 @@ a{
 
 
 input[type=text]:hover{
-  background-color: lightgrey;
+  cursor: text;
 }
 
 /*-------------------------*/
@@ -98,6 +98,7 @@ input[type=text]:hover{
 .button-submit:hover{
 	background: lightgrey;
 }
+
 .search{
 	margin-right: 81%;
 	margin-top: 3%;
@@ -261,6 +262,10 @@ input[type=text]:hover{
 .padding-64 {padding-top: 64px;padding-bottom: 64px}
 
 /* Colors */
+.shadow{
+    border-radius: 10px;
+    box-shadow: 1px 3px 5px 1px #d8d8d8;
+}
 
 .white,.hover-white:hover {
 	color: #000;
@@ -462,14 +467,12 @@ h3{
 /*_--------Bottom box--------*/
 .bottombox{
 	width: 100%;
-	height: 340px;
 	background: white;
-	display: flexbox;
 }
 /*---------Top 5 list---------*/
 .listbox{
-	width: 290px;
-	height: 328px;
+	width: 100%;
+	height: 100%;
 }
 .list a{
 	font-size: large;
@@ -480,9 +483,9 @@ h3{
 
 /*_--------Manage box--------*/
 .managebox{
-	width: 450px;
-	height: 650px;
-	background: white;
+	width: 28%;
+	height: 86%;
+	background: lightgrey;
 	left: 37%;
 	position: fixed;
 	border: #000 solid 1px;
@@ -492,18 +495,23 @@ h3{
 	display: block;
 }
 .managebox input{
-	background:#F0F0F0;	
+	background:white;	
 	border:none;
 	padding:6px 8px 6px 8px;
 	text-decoration:none; 
+}
+.managebox input[type="submit"]{
+	color:white;
+	background:purple;	
 	cursor: pointer;
+	padding:10px 30px ;
+	margin-top: 7%;
+	margin-left: 37%;
+	display: flex;
 }
 
+
 /*--------------Sidebar Album---------*/
-
-
-
-
 
 .sidebar{
 	height:100%;
