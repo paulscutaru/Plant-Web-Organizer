@@ -624,14 +624,7 @@ h3{
 	display: flex;
 
 }
-.submenualb select{
-	margin-right: 2px;
-    cursor: pointer;
-}
-.sectionalb {
-	display: flex;
-	border:none;
-}
+
 .categoriesalb:after,.categoriesalb:before{
 	content:"";
 	display:table;
@@ -639,7 +632,7 @@ h3{
 }
 .showalbum{
 	width: 70%;
-	height: 600px;
+	height: 75%;
 	left: 15%;
 	position: fixed;
 	padding:10px 30px;
