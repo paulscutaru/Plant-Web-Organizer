@@ -579,6 +579,14 @@ h3{
 
 /*------------Add Album--------------*/
 
+.avataralbum{
+	width:100px;
+	height:100px;
+	border-radius: 50%;
+	position:absolute;
+	top:-22%;
+	left:calc(50% - 50px); 
+}
 .principalalb{
 	margin-left: 17%;
 	top:45px;
@@ -586,24 +594,35 @@ h3{
 	width: 77%;
 }
 
+
+
 .manageboxalb{
-	width: 450px;
-	height: 650px;
-	background: white;
+	width: 28%;
+	height: 55%;
+	background: lightgrey;
 	left: 37%;
 	position: fixed;
-	border: #000 solid 1px;
-	padding:50px 50px;
+	border: none;
+	padding:50px 30px;
 }
 .manageformalb{
 	display: block;
 }
 .manageboxalb input{
-	background:#F0F0F0;	
-	border:none;
+	background:white;	
+	border:grey 1px solid;
 	padding:6px 8px 6px 8px;
 	text-decoration:none; 
+}
+.manageboxalb input[type="submit"]{
+	color:white;
+	background:purple;	
 	cursor: pointer;
+	padding:10px 30px ;
+	margin-top: 7%;
+	margin-left: 37%;
+	display: flex;
+
 }
 .submenualb select{
 	margin-right: 2px;
@@ -618,3 +637,18 @@ h3{
 	display:table;
 	clear:both;
 }
+.showalbum{
+	width: 70%;
+	left: 15%;
+	position: fixed;
+	padding:10px 30px;
+	margin-top: 40px;
+	border-top: 6px solid lightgrey;
+
+}
+	width: 70%;
+	background: lightgrey;
+	left: 15%;
+	position: fixed;
+	border: none;
+	padding:50px 30px;

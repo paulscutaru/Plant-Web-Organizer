@@ -7,10 +7,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="light-grey content" style="max-width:1600px">
 <nav>
 		<div>
-			<img src="icon.png" alt="icon.png"  class="icon">
+			<img src="images/icon.png" alt="icon.png"  class="icon">
 		</div>
 		
 
@@ -22,7 +22,6 @@
 		<div class="sidebar" id="mySidebar" >
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">  x  </a>
 			<a href="addalbum.html">Add album</a>
-			<a href="albums.html">Manage my albums</a>
 			<a href="home.html">Main page</a>
 		</div>
 
@@ -36,6 +35,42 @@
 			}
 		</script>
 	</nav>
+
+	<!--AFISARE ALBUME-->
+	<div class="showalbum scrollable">
+		<table>
+			<tr>
+				<th colspan="9"	><h2>My albums</h2></th>
+				
+			</tr>
+			<tr>
+				<th>ID</th>
+				<th>Photo</th>
+				<th>Name</th>
+				<th>Settings</th>
+			</tr>
+			
+			<tr>
+				<td>1</td>
+				<td><img src="images/medicinal.jpg" alt="" ></img></td>
+				<td>Medicinale</td>
+				<td>
+					<button class="button-addToAlbum shadow" id="">Share to..</button>
+					<button class="button-delete shadow" id="">Delete</button>
+				</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><img src="images/halucinogene.jpg" alt="" ></img></td>
+				<td>Halucinogene</td>
+				<td>
+					<button class="button-addToAlbum shadow" id="">Share to..</button>
+					<button class="button-delete shadow" id="">Delete</button>
+				</td>
+			</tr>
+			
+		</table>
+	</div>
 
 </body>
 </html>
