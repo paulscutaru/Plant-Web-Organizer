@@ -639,16 +639,11 @@ h3{
 }
 .showalbum{
 	width: 70%;
+	height: 600px;
 	left: 15%;
 	position: fixed;
 	padding:10px 30px;
 	margin-top: 40px;
 	border-top: 6px solid lightgrey;
-
+	padding-bottom:20px;
 }
-	width: 70%;
-	background: lightgrey;
-	left: 15%;
-	position: fixed;
-	border: none;
-	padding:50px 30px;
