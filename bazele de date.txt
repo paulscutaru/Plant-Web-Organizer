@@ -1,0 +1,29 @@
+Baze de date MySQL:
+users: 
+1) id - primary key int 
+2) username - varchar
+3) password - varchar
+4) email - varchar
+5) date - date
+
+plants:
+1) id - primary key int 
+2) id_user foreign key int
+3) id_album foreign key int
+3) photo - varchar
+4) name - varchar
+5) date - date
+6) region - varchar
+7) color - varchar
+8) uses - varchar
+9) others - varchar
+
+albums:
+1) id - primary key int
+2) id_user - foreign key int
+3) photo - varchar
+4) name - varchar
+
+
+
+
