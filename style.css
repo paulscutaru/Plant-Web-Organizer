@@ -1,14 +1,9 @@
 /* Html extract */
-html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
+* { box-sizing: border-box ; margin:10px 0;}
 button,input,select,textarea,optgroup{font:inherit;margin:0}
 
 body{
 	float: left;	
-}
-*{
-	font-family:"Segoe UI",Arial,sans-serif;
-	margin:10px 0;
-	font-size: 15px;
 }
 
 h1{
@@ -140,6 +135,7 @@ input[type=text]:hover{
 }
 .scrollable td{
 	width: 10%;
+	height: 10%;
 	border: lightgrey solid 2px;
 }
 
@@ -186,20 +182,23 @@ input[type=text]:hover{
 
 .content{
 	margin-left: auto;
-	margin-right: auto
+	margin-right: auto;
+	font-family:"Segoe UI",Arial,sans-serif;
+	
+	font-size: 15px;
 }
 
 .content {
-	max-width: 980px
+	max-width: 980px;
 }
 
 .hide {
 	display: none
 }
-
 .categories {
 	padding: 0 16px;
 }
+
 
 .hover-opacity:hover{
 	opacity: 0.60;
@@ -233,7 +232,6 @@ input[type=text]:hover{
 }
 
 .scrollable{
-	height: 1000px; 
 	overflow-x: hidden; 
     overflow-x: auto; 
     text-align:justify; 
@@ -352,13 +350,14 @@ input[type=text]:hover{
 
 .principal{
 	margin-left: 17%;
-	top:45px;
+	top:7%;
 	position: absolute;
 	width: 77%;
 }
 
 .icon{
 	height: 22%;
+	width:11%;
 	left: 1%;
 	position: fixed;
 }
@@ -495,8 +494,9 @@ h3{
 .managebox input{
 	background:white;	
 	border:grey 1px solid;
-	padding:6px 8px 6px 8px;
+	padding:6px;
 	text-decoration:none; 
+	width: 70%;
 }
 .managebox input[type="submit"]{
 	color:white;
@@ -506,6 +506,7 @@ h3{
 	margin-top: 7%;
 	margin-left: 37%;
 	display: flex;
+	width: 30%;
 }
 
 /*--------------Sidebar Album---------*/
@@ -571,12 +572,6 @@ h3{
 	clear:both;
 }
 
-
-
-
-
-
-
 /*------------Add Album--------------*/
 
 .avataralbum{
@@ -639,4 +634,59 @@ h3{
 	margin-top: 40px;
 	border-top: 6px solid lightgrey;
 	padding-bottom:20px;
+}
+
+@media screen and (max-width: 768px) {
+    .content{
+		width:30%;
+	} 
+	.principal{
+		width:70%;
+	}
+	.icon{
+		width: 15%;
+		height: 12%;
+	}
+	.openbtn{
+		width:10%;
+		height:7%;
+	}
+	.section{
+		display:inline-block;
+		
+	}
+	.center{
+		text-align: left;
+	}
+	.scrollable img{
+		width: 50px;
+		height: 50px;
+	}
+	.content table,.sidebar a,.sidebar .closebtn{
+		font-size:11px;
+	}	
+	.managebox{
+		font-size: 10px;
+		height: 90%;
+	}
+	.managebox .icon{
+		height: 100px;
+		width: 100px;
+	}
+	.managebox input{
+		font-size: 7px;
+		width: 100%;
+	}
+	h3{
+		font-size: 12px;
+	}
+	.managebox input[type="submit"] {
+		margin-left: 0%;		
+	}
+}
+
+@media screen and (max-width: 1350px) {
+	.managebox{
+		font-size: 10px;
+	}
 }
