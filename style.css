@@ -503,9 +503,8 @@ h3{
 	cursor: pointer;
 	padding:10px 30px ;
 	margin-top: 7%;
-	margin-left: 37%;
+	margin-left: 15%;
 	display: flex;
-	width: 30%;
 }
 
 /*--------------Sidebar Album---------*/
@@ -642,10 +641,6 @@ h3{
 	.principal{
 		width:70%;
 	}
-	.icon{
-		width: 17%;
-		height: 11%;
-	}
 	.openbtn{
 		width:10%;
 		height:7%;
@@ -663,24 +658,31 @@ h3{
 	.content table,.sidebar a,.sidebar .closebtn{
 		font-size:11px;
 	}	
-	.managebox,.loginbox p,.loginbox a{
+	.managebox,.loginbox p,.loginbox a,.manageboxalb p, .manageboxalb a{
 		font-size: 10px;
 		height: 90%;
 	}
-	.managebox .icon,.loginbox .icon{
+	.manageboxalb .icon .avataralbum,.loginbox .icon{
 		height: 100px;
 		width: 100px;
 	}
-	.managebox input,.loginbox input,.loginbox input[type="text"],.registerbox a{
+	.managebox input[type="submit"],.loginbox input[type="submit"]{
+		margin-left: 0%;
+		font-size: 12px;
+	}
+
+	.managebox input,.loginbox input,.loginbox input[type="text"],.registerbox a,.manageboxalb input{
 		font-size: 7px;
 		width: 100%;
 	}
+
+	.manageboxalb input[type="submit"]{
+		font-size: 7px;
+		margin-left: 0%;
+	}
+
 	h3{
 		font-size: 12px;
-	}
-	.managebox input[type="submit"],.loginbox input[type="submit"] {
-		margin-left: 0%;
-		font-size: 12px;		
 	}
 	
 }
