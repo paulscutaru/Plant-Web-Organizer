@@ -22,13 +22,13 @@
 	<div class="manageboxalb">
         <img src="images/icon.png" alt="icon.png" class="icon avataralbum">
         <h3>ADD ALBUM</h3>
-        <form action="albums.html" method="post" class="manageformalb" enctype="multipart/form-data">
+        <form action="albums.php" method="post" class="manageformalb" enctype="multipart/form-data">
             <p>Select image to upload:</p>
             <input type="file" name="imageToUpload" id="imageToUpload">
             <p>Enter name:</p>
             <input type="text" name="region" id="region">
-            
             <input type="submit" value="CREATE" name="submit" class="shadow button-upload">
+			<a href="albums.php">Go back to albums</a>
         </form>
 	</div>
 		

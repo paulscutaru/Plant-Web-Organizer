@@ -301,9 +301,8 @@ input[type=text]:hover{
 }
 
 .sidebar a {
-	padding: 8px 8px 8px 32px;
 	text-decoration: none;
-	font-size: 25px;
+	font-size: 20px;
 	color: #818181;
 	display: flexbox;
 }
@@ -521,9 +520,9 @@ h3{
 }
 
 .sidebar a {
-	padding: 8px 8px 8px 32px;
+	padding: 8px 0px 8px 10px;
 	text-decoration: none;
-	font-size: 25px;
+	font-size: 20px;
 	color: #818181;
 	display: block;
 }
@@ -644,8 +643,8 @@ h3{
 		width:70%;
 	}
 	.icon{
-		width: 15%;
-		height: 12%;
+		width: 17%;
+		height: 11%;
 	}
 	.openbtn{
 		width:10%;
@@ -653,7 +652,6 @@ h3{
 	}
 	.section{
 		display:inline-block;
-		
 	}
 	.center{
 		text-align: left;

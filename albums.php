@@ -21,8 +21,8 @@
 
 		<div class="sidebar" id="mySidebar" >
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">  x  </a>
-			<a href="addalbum.html">Add album</a>
-			<a href="home.html">Main page</a>
+			<a href="addalbum.php">Add album</a>
+			<a href="home.php">Main page</a>
 		</div>
 
 		<script>

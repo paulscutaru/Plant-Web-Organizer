@@ -1,4 +1,5 @@
 # Plant-Web-Organizer
-Scutaru Paul-Alexandru
-Burghelea George-Alexandru  
-Panainte Alexandru
+Grupa 2A7
+1) Scutaru Paul-Alexandru
+2) Burghelea George-Alexandru  
+3) Panainte Alexandru
