@@ -663,24 +663,26 @@ h3{
 	.content table,.sidebar a,.sidebar .closebtn{
 		font-size:11px;
 	}	
-	.managebox{
+	.managebox,.loginbox p,.loginbox a{
 		font-size: 10px;
 		height: 90%;
 	}
-	.managebox .icon{
+	.managebox .icon,.loginbox .icon{
 		height: 100px;
 		width: 100px;
 	}
-	.managebox input{
+	.managebox input,.loginbox input,.loginbox input[type="text"],.registerbox a{
 		font-size: 7px;
 		width: 100%;
 	}
 	h3{
 		font-size: 12px;
 	}
-	.managebox input[type="submit"] {
-		margin-left: 0%;		
+	.managebox input[type="submit"],.loginbox input[type="submit"] {
+		margin-left: 0%;
+		font-size: 12px;		
 	}
+	
 }
 
 @media screen and (max-width: 1350px) {

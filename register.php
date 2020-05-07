@@ -14,8 +14,8 @@
 	<!-- PAGE CONTENT -->
 	<div class="principal">
 
-		<!-- Login button -->
-		<div class="loginbox">
+		<!-- Register button -->
+		<div class="loginbox registerbox">
 			<img src="images/icon.png" alt="avatar.png" class="avatar">
 			<h3>Register Here</h3>
 			<form action="register.php" method="POST">

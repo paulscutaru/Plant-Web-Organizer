@@ -29,7 +29,7 @@ CREATE TABLE `plants` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
 
 CREATE TABLE `albums` (
- `id` int(11) DEFAULT NULL,
+ `id` int(11) NOT NULL AUTO_INCREMENT,
  `id_user` int(11) NOT NULL,
  `photo` varchar(256) NOT NULL,
  `name` varchar(50) NOT NULL,
