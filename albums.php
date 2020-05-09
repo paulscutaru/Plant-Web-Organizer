@@ -15,7 +15,7 @@
 		
 
 		<div>
-			<button class="openbtn" onclick="openNav()">☰ Open Album Menu</button>  
+			<button class="openbtn" onclick="openNav()">☰</button>  
 		</div >
 
 

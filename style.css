@@ -142,7 +142,7 @@ input[type=text]:hover{
 .scrollable img{
 	height: 120px;
 	width: 120px;
-	border: black solid 2px;
+	border: lightgrey solid 2px;
 }
 
 .button-addToAlbum{
@@ -494,17 +494,18 @@ h3{
 	background:white;	
 	border:grey 1px solid;
 	padding:6px;
-	text-decoration:none; 
+	text-decoration:none;
 	width: 70%;
 }
 .managebox input[type="submit"]{
 	color:white;
 	background:purple;	
 	cursor: pointer;
-	padding:10px 30px ;
 	margin-top: 7%;
-	margin-left: 15%;
+	padding: 8px 13px;
+	margin-left: 40%;
 	display: flex;
+	width: 22%;
 }
 
 /*--------------Sidebar Album---------*/
@@ -634,30 +635,9 @@ h3{
 	padding-bottom:20px;
 }
 
-@media screen and (max-width: 768px) {
-    .content{
-		width:30%;
-	} 
-	.principal{
-		width:70%;
-	}
-	.openbtn{
-		width:10%;
-		height:7%;
-	}
-	.section{
-		display:inline-block;
-	}
-	.center{
-		text-align: left;
-	}
-	.scrollable img{
-		width: 50px;
-		height: 50px;
-	}
-	.content table,.sidebar a,.sidebar .closebtn{
-		font-size:11px;
-	}	
+/*---------Responsive------------*/
+
+@media screen and (max-width: 1100px) {
 	.managebox,.loginbox p,.loginbox a,.manageboxalb p, .manageboxalb a{
 		font-size: 10px;
 		height: 90%;
@@ -668,7 +648,8 @@ h3{
 	}
 	.managebox input[type="submit"],.loginbox input[type="submit"]{
 		margin-left: 0%;
-		font-size: 12px;
+		font-size: 7px;
+		width: 30%;
 	}
 
 	.managebox input,.loginbox input,.loginbox input[type="text"],.registerbox a,.manageboxalb input{
@@ -687,8 +668,70 @@ h3{
 	
 }
 
-@media screen and (max-width: 1350px) {
-	.managebox{
-		font-size: 10px;
+@media screen and (max-width: 768px) {
+	.content{
+		width:30%;
+	} 
+	.principal{
+		height: 400px;
+	}
+	.openbtn{
+		width:10%;
+		height:7%;
+	}
+	.section{
+		display:inline-block;
+	}
+	.center{
+		text-align: left;
+	}
+	.content .icon{
+		width: 55px;
+		height: 55px;
+	}
+	.scrollable{
+		height: 450px;
+	}
+	.scrollable td{
+		border: lightgrey solid 1px;
+	}
+	.scrollable img{
+		width: 15px;
+		height: 15px;
+		padding: 0px;
+		border: none;
+	}
+	.content table,.sidebar a,.sidebar .closebtn{
+		font-size:7px;
+	}	
+	h1,h2{
+		font-size: 15px;
+	}
+	h4,select,p,input,.listbox a, .listbox li{
+		font-size: 8px;
+	}
+	.categories input[type="text"]{
+		font-size:8px;
+		width: 95px;
+	}
+	.managebox input[type="submit"]{
+		width: 50px;
+	}
+	.sidebar{
+		width: 14%;
+	}
+}
+
+@media screen and (max-width: 570px) {
+	.managebox,.loginbox,.manageboxalb{
+		width: 60%;
+		left: 18%;
+	}
+	.managebox input[type="submit"],.loginbox input[type="submit"],.manageboxalb input[type="submit"]{
+		width: 50px;
+		height: 30px;
+	}
+	.loginbox input[type="text"]{
+		font-size: 8px;
 	}
 }
