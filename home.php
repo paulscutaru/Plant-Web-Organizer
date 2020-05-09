@@ -13,6 +13,7 @@ include "core/init.php";
 </head>
 
 <body class="light-grey content">
+
 	<!-- Sidebar -->
 	<nav>
 		<div>
@@ -51,7 +52,7 @@ include "core/init.php";
 				<h1>HerbaWeb</h1>
 			</div>
 
-			<form action="filter.php" method="post">
+			<form action="home.php" method="post" enctype="multipart/form-data">
 				<div class="categories">
 					<div class="section">
 						<div class="submenu">
@@ -130,7 +131,7 @@ include "core/init.php";
 				</tr>
 
 				<?php
-					show_plants($con);
+				show_plants($con);
 				?>
 
 			</table>
@@ -140,7 +141,7 @@ include "core/init.php";
 		<!-- Bottom box -->
 		<div class="bottombox topbar bottombar">
 			<!-- Top most popular plants-->
-			<div class="padding-16 listbox">
+			<div class="listbox">
 				<h4 class="margin-left">Top 5 most popular plants:</h4>
 				<ol class="list">
 					<li class="padding"><a href="#plant1" class="top5-element">Plant</a></li>
@@ -153,6 +154,7 @@ include "core/init.php";
 		</div>
 		<!-- End page content -->
 	</div>
+
 </body>
 
 </html>

@@ -76,14 +76,14 @@ if (empty($_POST) === false && empty($errors) === true) {
 		'date' => date("Y/m/d"),
 	);
 
-	if(register_user($con, $register_data) == TRUE){
+	if (register_user($con, $register_data) == TRUE) {
 		$data = array();
-		$data = user_data($con,get_user_id($con,$_POST['username']));
+		$data = user_data($con, get_user_id($con, $_POST['username']));
+		$_SESSION['user_id'] = get_user_id($con, $register_data['username']);
 		//print_r($data);
 		header('Location: home.php');
-    	exit();
+		exit();
 	}
-	
 } else if (empty($errors) === false) {
 	echo get_errors($errors);
 }

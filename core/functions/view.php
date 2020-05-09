@@ -2,10 +2,25 @@
 function show_plants($con)
 {
     $id = $_SESSION['user_id'];
-    $query = "SELECT * FROM plants where id_user='$id'";
-    $result = mysqli_query($con, $query);
-    while ($row = mysqli_fetch_array($result)) {
-        echo '
+    $query = "SELECT COUNT(*) FROM plants where id_user='$id'";
+    $count = mysqli_fetch_array(mysqli_query($con, $query));
+    if ($count[0] == 0) {
+        echo '<tr>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        </tr>';
+    } else {
+        $query = "SELECT * FROM plants where id_user='$id'";
+        $result = mysqli_query($con, $query);
+        while ($row = mysqli_fetch_array($result)) {
+            echo '
 					<tr>
                     <td> ' . $row['id'] . ' </td>
                     <td>
@@ -22,6 +37,7 @@ function show_plants($con)
 					<button class="button-delete shadow" id=>Delete</button>
 					</td>
 					</tr>';
+        }
     }
 }
 function show_categories($con, $category)
