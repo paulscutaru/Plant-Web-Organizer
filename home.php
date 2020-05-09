@@ -122,11 +122,11 @@ include "core/init.php";
 					<th>ID</th>
 					<th>Photo</th>
 					<th>Name</th>
-					<th>Date</th>
 					<th>Region</th>
 					<th>Color</th>
 					<th>Uses</th>
 					<th>Others</th>
+					<th>Date</th>
 					<th>Settings</th>
 				</tr>
 
