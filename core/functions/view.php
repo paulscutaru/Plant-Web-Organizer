@@ -58,15 +58,6 @@ function show_categories($con, $category)
 }
 function show_albums($con)
 {
-    /*<tr>
-				<td>1</td>
-				<td><img src="images/medicinal.jpg" alt="" ></img></td>
-				<td>Medicinale</td>
-				<td>
-					<button class="button-addToAlbum shadow" id="">Share to..</button>
-					<button class="button-delete shadow" id="">Delete</button>
-				</td>
-    </tr>*/
     $id = $_SESSION['user_id'];
     $query = "SELECT COUNT(*) FROM albums where id_user='$id'";
     $count = mysqli_fetch_array(mysqli_query($con, $query));
