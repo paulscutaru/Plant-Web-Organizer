@@ -13,7 +13,6 @@ body{
 h1{
 	font-size: 48px;
 	content: "";  
-    display: flexbox; 
     margin: -100 auto; 
     width:240px; 
 	border-bottom: 1mm solid #ccc;
@@ -67,10 +66,10 @@ input[type=text]:hover{
 
 /*-------------------------*/
 
+a{text-decoration: none;}
 
 .button{
 	border:none;
-	display: flexbox;
 	padding:12px 32px 12px 32px;
 	overflow:hidden;
 	text-decoration:none; 
@@ -112,7 +111,6 @@ input[type=text]:hover{
 
 
 .center .bar{
-	display:flexbox;
 	width:auto
 }
 
@@ -120,7 +118,6 @@ input[type=text]:hover{
 
 .categories:after,.categories:before{
 	content:"";
-	display:flexbox;
 	clear:both;
 }
 
@@ -301,7 +298,6 @@ input[type=text]:hover{
 	text-decoration: none;
 	font-size: 20px;
 	color: #818181;
-	display: flexbox;
 }
 
 .sidebar a:hover {
@@ -331,7 +327,6 @@ input[type=text]:hover{
 .openbtn:hover {
 	color: white;
 	border: none;
-    display: flexbox; 
 	background: linear-gradient(-45deg, #ee7752, #B06DCB, #A749CD, #ee7752);
   	background-size: 400% 400%;
   	animation: gradient 15s ease infinite;

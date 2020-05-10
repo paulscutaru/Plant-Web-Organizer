@@ -6,6 +6,13 @@ function logged_in_redirect() {
 	}
 }
 
+function protected_page() {
+	if (logged_in() === false) {
+		header('Location: protected.php');
+		exit();
+	}
+}
+
 function array_clean(&$item) {
 	$item = mysqli_real_escape_string($GLOBALS['con'] ,$item);
 }
@@ -21,4 +28,3 @@ function get_errors($errors) {
 	}
 	return '<ul>' . implode('', $output) . '</ul>';
 }
-?>

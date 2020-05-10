@@ -33,8 +33,8 @@ function show_plants($con)
 					<td> ' . $row['others'] . ' </td>
 					<td> ' . $row['date'] . ' </td>
 					<td>
-					<button class="button-addToAlbum shadow"\" id=>Add to album</button>
-					<button class="button-delete shadow" id=>Delete</button>
+					<button class="button-addToAlbum shadow" id="add">Add to album</button>
+					<button class="button-delete shadow"><a href="delete.php?id=' . $row['id'] . '">Delete</a></button>
 					</td>
 					</tr>';
         }

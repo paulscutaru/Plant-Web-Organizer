@@ -47,6 +47,7 @@
 
 <?php
 include 'core/init.php';
+protected_page();
 
 if (empty($_POST) === false) {
     $required_fields = array('region', 'color', 'use', 'date', 'others');

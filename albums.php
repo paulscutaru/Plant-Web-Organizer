@@ -103,3 +103,8 @@
 
 </body>
 </html>
+
+<?php
+include "core/init.php";
+protected_page();
+?>
