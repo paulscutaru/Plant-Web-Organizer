@@ -28,13 +28,12 @@ CREATE TABLE `plants` (
   ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+	
 CREATE TABLE `albums` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
  `id_user` int(11) NOT NULL,
  `photo` varchar(256) NOT NULL,
  `name` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `unique user` (`id_user`),
-  CONSTRAINT `fk_user_albums` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) 
-  ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+ PRIMARY KEY (`id`),
+ CONSTRAINT `fk_user_albums` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4
