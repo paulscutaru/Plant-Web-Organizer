@@ -38,8 +38,9 @@
 </html>
 
 <?php
-include 'core/init.php';
 
+include 'core/init.php';
+protected_page();
 if (empty($_POST) === false) {
     $required_fields = array('name');
     foreach ($_POST as $key => $value) {
@@ -65,7 +66,7 @@ if (empty($_POST) === false && isset($_FILES['photo']) && empty($errors) === tru
     if (add_album($con, $album_data) === TRUE) {
         //$data = array();
         //$data = user_data($con,get_user_id($con,$_POST['username']));
-        //print_r($album_data);
+        print_r($album_data);
         header('Location: albums.php');
         exit();
     }
@@ -73,9 +74,4 @@ if (empty($_POST) === false && isset($_FILES['photo']) && empty($errors) === tru
     echo get_errors($errors);
 }
 
-?>
-
-<?php
-include "core/init.php";
-protected_page();
 ?>

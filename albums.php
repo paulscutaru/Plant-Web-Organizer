@@ -1,3 +1,7 @@
+<?php
+include "core/init.php";
+protected_page();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,62 +53,12 @@
 				<th>Name</th>
 				<th>Settings</th>
 			</tr>
-			
-			<tr>
-				<td>1</td>
-				<td><img src="images/medicinal.jpg" alt="" ></img></td>
-				<td>Medicinale</td>
-				<td>
-					<button class="button-addToAlbum shadow" id="">Share to..</button>
-					<button class="button-delete shadow" id="">Delete</button>
-				</td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td><img src="images/halucinogene.jpg" alt="" ></img></td>
-				<td>Halucinogene</td>
-				<td>
-					<button class="button-addToAlbum shadow" id="">Share to..</button>
-					<button class="button-delete shadow" id="">Delete</button>
-				</td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td><img src="images/halucinogene.jpg" alt="" ></img></td>
-				<td>Halucinogene</td>
-				<td>
-					<button class="button-addToAlbum shadow" id="">Share to..</button>
-					<button class="button-delete shadow" id="">Delete</button>
-				</td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td><img src="images/halucinogene.jpg" alt="" ></img></td>
-				<td>Halucinogene</td>
-				<td>
-					<button class="button-addToAlbum shadow" id="">Share to..</button>
-					<button class="button-delete shadow" id="">Delete</button>
-				</td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td><img src="images/halucinogene.jpg" alt="" ></img></td>
-				<td>Halucinogene</td>
-				<td>
-					<button class="button-addToAlbum shadow" id="">Share to..</button>
-					<button class="button-delete shadow" id="">Delete</button>
-				</td>
-			</tr>
-			
-
-			
+			<?php
+				show_albums($con);
+			?>
 		</table>
 	</div>
 
 </body>
 </html>
 
-<?php
-include "core/init.php";
-protected_page();
-?>
