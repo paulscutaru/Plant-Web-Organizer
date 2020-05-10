@@ -11,12 +11,6 @@
 
 <body class="light-grey content" style="max-width:1600px">
 
-    <!-- Sidebar -->
-
-
-
-
-    <!-- PAGE CONTENT -->
     <!-- PAGE CONTENT -->
     <div class="principalalb">
 

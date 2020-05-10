@@ -1,4 +1,5 @@
 <?php
+/*Scriptul paginii principale */
 include "core/init.php";
 protected_page();
 ?>

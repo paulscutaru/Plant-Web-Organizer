@@ -1,4 +1,5 @@
 <?php
+    /*Functii folosite pt plante */
     function add_plant($con, $plant_data) {
         array_walk($plant_data, 'array_clean');
         $fields = '`' . implode('`, `', array_keys($plant_data)) . '`';
@@ -15,4 +16,3 @@
         $result = mysqli_fetch_array($query);
         return $result[0] > 0 ? true : false;
     }
-?>

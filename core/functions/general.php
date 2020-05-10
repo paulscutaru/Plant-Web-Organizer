@@ -1,4 +1,5 @@
 <?php
+/*Functii general utile */
 function logged_in_redirect() {
 	if (logged_in() === true) {
 		header('Location: home.php');

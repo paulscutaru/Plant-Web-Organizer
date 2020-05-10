@@ -46,6 +46,7 @@
 
 
 <?php
+/*Script adaugare planta in tabel*/
 include 'core/init.php';
 protected_page();
 

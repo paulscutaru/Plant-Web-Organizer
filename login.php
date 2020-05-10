@@ -35,6 +35,7 @@
 </html>
 
 <?php
+/*Script pentru login*/
 include 'core/init.php';
 
 if (!empty($_POST)) {

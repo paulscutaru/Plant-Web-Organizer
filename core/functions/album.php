@@ -1,4 +1,5 @@
 <?php
+    /*Functii folosite pt albume */
     function add_album($con, $album_data) {
         array_walk($album_data, 'array_clean');
         $fields = '`' . implode('`, `', array_keys($album_data)) . '`';

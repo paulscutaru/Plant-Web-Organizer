@@ -1,4 +1,5 @@
 <?php
+/*Functii de render*/
 function show_plants($con)
 {
     $id = $_SESSION['user_id'];

@@ -37,6 +37,7 @@
 </html>
 
 <?php
+/*Script pentru register*/
 include 'core/init.php';
 logged_in_redirect();
 

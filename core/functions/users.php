@@ -1,5 +1,5 @@
 <?php
-
+/*Functii folosite pt users */
 function register_user($con, $register_data) {
 	array_walk($register_data, 'array_clean');
 	
