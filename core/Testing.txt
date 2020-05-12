@@ -1,0 +1,30 @@
+Register
+--------------------
+Nu pot creea 2 utilizatori cu acelasi username.
+Nu pot creea 2 utilizatori cu aceeasi adresa de mail.
+Nu se intampla nimic daca 2 useri au aceeasi parola.
+Se accepta absolut orice fel de email, chiar si unul de genul laFIIe@smecher.rau (nice).
+--atata timp cat are @ mailul este acceptat--
+La user si parola sunt acceptate caractere speciale (chineza, chirilic, emojiuri).
+Mailul nu poate contine niciun caracter special.
+
+
+Home/Albums
+--------------------
+Id.ul plantelor/albumelor este general, pentru toata baza de date.
+Daca un utilizator nou incarca o planta/un album id.ul va fi
+"nr de plante/albume incarcate(chiar daca au fost sterse) + 1"
+Id ul plantelor/albumelor trebuie sa fie specific userului
+"nr plante/albume incarcate de user + 1".
+
+
+Add plants/ add album
+--------------------
+Sunt acceptate caractere speciale(chineza, chirilic, emojiuri) in oricare dintre campuri.
+(pagina home/albums va afisa aceste caractere speciale).
+La campul select image to upload este acceptat absolut orice tip de fisier
+(.png, .gif, .NEF, .log, .exe, .ISO ....), atat timp cat acesta nu depaseste
+dimensiunea de 42Mb. (pagina home/albums va afisa imaginea doar daca aceasta are extensie
+specifica unei imagini/gif, in caz contrar "imaginea" nu va fi afisata).
+
+
