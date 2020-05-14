@@ -1,5 +1,5 @@
 <?php
-/*Pagina in care esti redirectionat daca nu esti logat si incerci pe o pagina*/
+/*Pagina in care esti redirectionat daca nu esti logat si incerci sa intri pe o pagina*/
 include 'core/init.php';
 ?>
 <!DOCTYPE html>

@@ -106,7 +106,8 @@ a{text-decoration: none;}
 
 .submenu select{
 	margin-right: 2px;
-    cursor: pointer;
+	cursor: pointer;
+	width: 100px;
 }
 
 
@@ -192,6 +193,7 @@ a{text-decoration: none;}
 .categories {
 	padding: 0 16px;
 }
+
 
 
 .hover-opacity:hover{

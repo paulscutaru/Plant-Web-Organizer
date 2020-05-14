@@ -22,7 +22,7 @@
             <h3>ADD PLANT</h3>
             <form action="manage.php" method="post" class="manageform" enctype="multipart/form-data">
                 <p>Select image to upload:</p>
-                <input type="file" name="photo" id="photo" accept="image/*">
+                <input type="file" name="photo" id="photo" accept="image/png, image/jpeg">
                 <p>Enter name:</p>
                 <input type="text" name="name" id="name">
                 <p>Enter region:</p>

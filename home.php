@@ -54,12 +54,12 @@ protected_page();
 				<h1>HerbaWeb</h1>
 			</div>
 
-			<form action="home.php" method="post" enctype="multipart/form-data">
+			<form action="home.php" method="POST" enctype="multipart/form-data">
 				<div class="categories">
 					<div class="section">
 						<div class="submenu">
 							<h4 class="center">Region</h4>
-							<select id="region" class="options white padding">
+							<select name="region" id="region" class="options white padding">
 								<?php
 								show_categories($con, 'region');
 								?>
@@ -67,7 +67,7 @@ protected_page();
 						</div>
 						<div class="submenu">
 							<h4 class="center">Color</h4>
-							<select id="color" class="options white padding">
+							<select name="color" id="color" class="options white padding">
 								<?php
 								show_categories($con, 'color');
 								?>
@@ -75,7 +75,7 @@ protected_page();
 						</div>
 						<div class="submenu">
 							<h4 class="center">Uses</h4>
-							<select id="uses" class="options white padding">
+							<select name="uses" id="uses" class="options white padding">
 								<?php
 								show_categories($con, 'uses');
 								?>
@@ -83,7 +83,7 @@ protected_page();
 						</div>
 						<div class="submenu">
 							<h4 class="center">Other</h4>
-							<select id="others" class="options white padding ">
+							<select name="others" id="others" class="options white padding ">
 								<?php
 								show_categories($con, 'others');
 								?>
@@ -94,21 +94,28 @@ protected_page();
 
 					<div class="search">
 						<p>Search name:</p>
-						<input type="text" placeholder=" Search">
+						<input type="text" name="search" placeholder=" Search">
 					</div>
 
 					<div class="sortby">
 						<p>Sort by:</p>
-						<select id="sort">
-							<option value="none">-</option>
-							<option value="rarity">Date</option>
+						<select name="sort" id="sort">
+							<option value="-">-</option>
+							<option value="Date">Date</option>
 						</select>
 					</div>
 				</div>
 
 				<div>
-					<input type="submit" title="Press this button after you have completed all fields!" class="margin-left white button-submit shadow">
+					<input type="submit" name="submit" title="Press this button after you have completed all fields!" class="margin-left white button-submit shadow">
 				</div>
+				<?php
+				if(empty($_POST)===false)
+				{
+					 foreach ($_POST as $key => $value)
+					 	echo $value . ' ';
+				}
+				?>
 			</form>
 		</nav>
 
@@ -121,7 +128,6 @@ protected_page();
 					</th>
 				</tr>
 				<tr>
-					<th>ID</th>
 					<th>Photo</th>
 					<th>Name</th>
 					<th>Region</th>
@@ -133,7 +139,7 @@ protected_page();
 				</tr>
 
 				<?php
-				show_plants($con);
+					show_plants($con);
 				?>
 
 			</table>

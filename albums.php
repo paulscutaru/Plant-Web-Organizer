@@ -48,7 +48,6 @@ protected_page();
 				
 			</tr>
 			<tr>
-				<th>ID</th>
 				<th>Photo</th>
 				<th>Name</th>
 				<th>Settings</th>

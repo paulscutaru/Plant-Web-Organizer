@@ -15,15 +15,36 @@ function show_plants($con)
         <td> - </td>
         <td> - </td>
         <td> - </td>
-        <td> - </td>
         </tr>';
     } else {
-        $query = "SELECT * FROM plants where id_user='$id'";
+        $filtered = isset($_POST['submit']);
+        
+        //daca nu sunt puse filtre
+        if ($filtered == false) 
+            $query = "SELECT * FROM plants where id_user='$id'";
+        else if ($filtered == true) {
+            $filters = array(
+                'region' => $_POST['region'],
+                'color' => $_POST['color'],
+                'uses' => $_POST['uses'],
+                'others' => $_POST['others'],
+            );
+            $sort = $_POST['sort'];
+
+            //construiesc un query concatenand filtrele
+            $query = "SELECT * FROM plants where id_user='$id'";
+            foreach ($filters as $key => $value) {
+                if ($value != "All")
+                    $query = $query . " and $key='$value'";
+            }
+            if($sort != "-")
+                $query = $query . " order by $sort desc";
+        }
+
         $result = mysqli_query($con, $query);
         while ($row = mysqli_fetch_array($result)) {
             echo '
 					<tr>
-                    <td> ' . $row['id'] . ' </td>
                     <td>
                     <img src="images/' . $row['photo'] . '" alt="image"/>
                     </td>
@@ -49,6 +70,8 @@ function show_categories($con, $category)
     if ($count[0] == 0)
         echo '<option>-</option>';
     else {
+        
+        echo '<option>All</option>';
         $query = "SELECT DISTINCT $category FROM plants where id_user='$id'";
         $result = mysqli_query($con, $query);
         while ($row = mysqli_fetch_array($result)) {
@@ -66,7 +89,6 @@ function show_albums($con)
         <td> - </td>
         <td> - </td>
         <td> - </td>
-        <td> - </td>
         </tr>';
     } else {
         $query = "SELECT * FROM albums where id_user='$id'";
@@ -74,7 +96,6 @@ function show_albums($con)
         while ($row = mysqli_fetch_array($result)) {
             echo '
 					<tr>
-                    <td> ' . $row['id'] . ' </td>
                     <td>
                     <img src="images/' . $row['photo'] . '" alt="image"/>
                     </td>
@@ -85,5 +106,5 @@ function show_albums($con)
 					</td>
 					</tr>';
         }
-}
+    }
 }

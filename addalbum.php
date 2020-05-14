@@ -20,7 +20,7 @@
             <h3>ADD ALBUM</h3>
             <form action="addalbum.php" method="post" class="manageformalb" enctype="multipart/form-data">
                 <p>Select image to upload:</p>
-                <input type="file" name="photo" id="photo" accept="image/*">
+                <input type="file" name="photo" id="photo" accept="image/png, image/jpeg">
                 <p>Enter name:</p>
                 <input type="text" name="name" id="name">
                 <input type="submit" value="CREATE" name="submit" class="shadow button-upload">
