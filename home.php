@@ -45,6 +45,19 @@ protected_page();
 			function closeNav() {
 				document.getElementById("mySidebar").style.width = "0px";
 			}
+			//AJAX
+			function loadDoc() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						var result = this.responseText.split("\n");
+						var id = Math.floor(Math.random() * result.length);
+						document.getElementById("fact").innerHTML = result[id];
+					}
+				};
+				xhttp.open("GET", "facts.txt", true);
+				xhttp.send();
+			}
 		</script>
 	</nav>
 
@@ -140,15 +153,20 @@ protected_page();
 			</table>
 		</div>
 
+		<div class="listbox">
+			<button class="button-fact margin-top" onclick="loadDoc()">Facts</button>
+			<p id="fact" class="margin-left margin-top"></p>
+		</div>
+
 		<!-- Bottom box -->
 		<div class="bottombox topbar bottombar">
 			<!-- Top most popular plants RSS Feed-->
 			<div class="listbox">
 				<h4 class="margin-left margin-top">Top 5 most popular plants:</h4>
 				<a href="rss.php">
-					<img src="images/rss_icon.png" class="margin-left rssIcon" alt="image.png" width="50" height="22"></a>
+					<img src="images/rss_icon.png" class="margin-left rssIcon" alt="image.png" width="50" height="22">
+				</a>
 			</div>
-
 		</div>
 		<!-- End page content -->
 	</div>
