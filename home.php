@@ -146,7 +146,7 @@ protected_page();
 			<div class="listbox">
 				<h4 class="margin-left margin-top">Top 5 most popular plants:</h4>
 				<a href="rss.php">
-					<img src="images/rss_icon.png" class="margin-left" width="50" height="22"></a>
+					<img src="images/rss_icon.png" class="margin-left rssIcon" width="50" height="22"></a>
 			</div>
 
 		</div>

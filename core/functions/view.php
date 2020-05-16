@@ -18,9 +18,9 @@ function show_plants($con)
         </tr>';
     } else {
         $filtered = isset($_GET['submit']);
-        
+
         //daca nu sunt puse filtre
-        if ($filtered == false) 
+        if ($filtered == false)
             $query = "SELECT * FROM plants where id_user='$id'";
         else if ($filtered == true) {
             $filters = array(
@@ -38,7 +38,7 @@ function show_plants($con)
                 if ($value != "All" && $value != null)
                     $query = $query . " and $key='$value'";
             }
-            if($sort != "-")
+            if ($sort != "-")
                 $query = $query . " order by $sort desc";
         }
 
@@ -71,12 +71,25 @@ function show_categories($con, $category)
     if ($count[0] == 0)
         echo '<option>-</option>';
     else {
-        
-        echo '<option>All</option>';
-        $query = "SELECT DISTINCT $category FROM plants where id_user='$id'";
-        $result = mysqli_query($con, $query);
-        while ($row = mysqli_fetch_array($result)) {
-            echo '<option> ' . $row[$category] . '</option>';
+        $filtered = isset($_GET['submit']);
+        //daca sunt filtrate categoriile, afisez filtrul ales primul
+        if ($filtered == true) {
+            echo '<option> ' . $_GET[$category] . '</option>';
+            if ($_GET[$category] != "All")
+                echo '<option>All</option>';
+            $query = "SELECT DISTINCT $category FROM plants where id_user='$id'";
+            $result = mysqli_query($con, $query);
+            while ($row = mysqli_fetch_array($result)) {
+                if ($row[$category] != $_GET[$category])
+                    echo '<option> ' . $row[$category] . '</option>';
+            }
+        } else { //afisez filtrele normal
+            echo '<option>All</option>';
+            $query = "SELECT DISTINCT $category FROM plants where id_user='$id'";
+            $result = mysqli_query($con, $query);
+            while ($row = mysqli_fetch_array($result)) {
+                echo '<option> ' . $row[$category] . '</option>';
+            }
         }
     }
 }
