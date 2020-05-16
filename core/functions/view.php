@@ -17,24 +17,25 @@ function show_plants($con)
         <td> - </td>
         </tr>';
     } else {
-        $filtered = isset($_POST['submit']);
+        $filtered = isset($_GET['submit']);
         
         //daca nu sunt puse filtre
         if ($filtered == false) 
             $query = "SELECT * FROM plants where id_user='$id'";
         else if ($filtered == true) {
             $filters = array(
-                'region' => $_POST['region'],
-                'color' => $_POST['color'],
-                'uses' => $_POST['uses'],
-                'others' => $_POST['others'],
+                'region' => $_GET['region'],
+                'color' => $_GET['color'],
+                'uses' => $_GET['uses'],
+                'others' => $_GET['others'],
+                'name' => $_GET['search'],
             );
-            $sort = $_POST['sort'];
+            $sort = $_GET['sort'];
 
-            //construiesc un query concatenand filtrele
+            //construiesc un query concatenand filtrele alese
             $query = "SELECT * FROM plants where id_user='$id'";
             foreach ($filters as $key => $value) {
-                if ($value != "All")
+                if ($value != "All" && $value != null)
                     $query = $query . " and $key='$value'";
             }
             if($sort != "-")

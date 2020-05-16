@@ -1,5 +1,5 @@
 <?php
-/*Scriptul paginii principale */
+/*Pagina principala cu plante*/
 include "core/init.php";
 protected_page();
 ?>
@@ -12,6 +12,7 @@ protected_page();
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.mysite.com/rss/rss2.xml" />
 </head>
 
 <body class="light-grey content">
@@ -30,11 +31,13 @@ protected_page();
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
 			<a href="manage.php">Add plants</a>
 			<a href="albums.php">Albums</a>
-			<a href="#about">About</a>
+			<a href="#export">Export data</a>
 			<a href="logout.php">Logout</a>
+
+			<h4 class="padding-small">@<?php show_user_name($con) ?></h4>
 		</div>
 
-		<script>
+		<script type="text/javascript">
 			function openNav() {
 				document.getElementById("mySidebar").style.width = "16%";
 			}
@@ -54,7 +57,7 @@ protected_page();
 				<h1>HerbaWeb</h1>
 			</div>
 
-			<form action="home.php" method="POST" enctype="multipart/form-data">
+			<form action="home.php" method="GET" enctype="multipart/form-data">
 				<div class="categories">
 					<div class="section">
 						<div class="submenu">
@@ -89,12 +92,11 @@ protected_page();
 								?>
 							</select>
 						</div>
-
 					</div>
 
 					<div class="search">
 						<p>Search name:</p>
-						<input type="text" name="search" placeholder=" Search">
+						<input type="text" name="search" id="search" placeholder=" Search">
 					</div>
 
 					<div class="sortby">
@@ -107,15 +109,8 @@ protected_page();
 				</div>
 
 				<div>
-					<input type="submit" name="submit" title="Press this button after you have completed all fields!" class="margin-left white button-submit shadow">
+					<input type="submit" name="submit" title="Press this button to submit or to refresh!" class="margin-left white button-submit shadow">
 				</div>
-				<?php
-				if(empty($_POST)===false)
-				{
-					 foreach ($_POST as $key => $value)
-					 	echo $value . ' ';
-				}
-				?>
 			</form>
 		</nav>
 
@@ -139,26 +134,21 @@ protected_page();
 				</tr>
 
 				<?php
-					show_plants($con);
+				show_plants($con);
 				?>
 
 			</table>
 		</div>
 
-
 		<!-- Bottom box -->
 		<div class="bottombox topbar bottombar">
-			<!-- Top most popular plants-->
+			<!-- Top most popular plants RSS Feed-->
 			<div class="listbox">
-				<h4 class="margin-left">Top 5 most popular plants:</h4>
-				<ol class="list">
-					<li class="padding"><a href="#plant1" class="top5-element">Plant</a></li>
-					<li class="padding"><a href="#plant2" class="top5-element">Plant</a></li>
-					<li class="padding"><a href="#plant3" class="top5-element">Plant</a></li>
-					<li class="padding"><a href="#plant4" class="top5-element">Plant</a></li>
-					<li class="padding"><a href="#plant5" class="top5-element">Plant</a></li>
-				</ol>
+				<h4 class="margin-left margin-top">Top 5 most popular plants:</h4>
+				<a href="rss.php">
+					<img src="images/rss_icon.png" class="margin-left" width="50" height="22"></a>
 			</div>
+
 		</div>
 		<!-- End page content -->
 	</div>
