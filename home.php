@@ -37,7 +37,7 @@ protected_page();
 			<h4 class="padding-small">@<?php show_user_name($con) ?></h4>
 		</div>
 
-		<script type="text/javascript">
+		<script>
 			function openNav() {
 				document.getElementById("mySidebar").style.width = "16%";
 			}
@@ -118,8 +118,8 @@ protected_page();
 		<div class="topbar bottombar scrollable">
 			<table>
 				<tr>
-					<th colspan="9">
-						<h2>My plants</h2>
+					<th colspan="8" class="tableTitle">
+						My plants
 					</th>
 				</tr>
 				<tr>
@@ -146,7 +146,7 @@ protected_page();
 			<div class="listbox">
 				<h4 class="margin-left margin-top">Top 5 most popular plants:</h4>
 				<a href="rss.php">
-					<img src="images/rss_icon.png" class="margin-left rssIcon" width="50" height="22"></a>
+					<img src="images/rss_icon.png" class="margin-left rssIcon" alt="image.png" width="50" height="22"></a>
 			</div>
 
 		</div>

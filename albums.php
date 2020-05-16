@@ -44,7 +44,7 @@ protected_page();
 	<div class="showalbum scrollable bottombar">
 		<table>
 			<tr>
-				<th colspan="9"	><h2>My albums</h2></th>
+				<th colspan="3"	class="tableTitle">My albums</th>
 				
 			</tr>
 			<tr>

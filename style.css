@@ -13,7 +13,6 @@ body{
 h1{
 	font-size: 48px;
 	content: "";  
-    margin: -100 auto; 
     width:240px; 
 	border-bottom: 1mm solid #ccc;
 	background: linear-gradient(-45deg, #ee7752, #B06DCB, #A749CD, #ee7752);
@@ -28,7 +27,6 @@ h2{font-size:30px; margin-bottom: 25px; margin-top: 25px;}
 h3{
 	font-size:24px;
 	margin-bottom: -15px;
-    margin: -100 auto; 
 	background: linear-gradient(-45deg, #ee7752, #B06DCB, #A749CD, #ee7752);
   	background-size: 400% 400%;
   	animation: gradient 15s ease infinite;
@@ -144,39 +142,26 @@ a{text-decoration: none;}
 	border: lightgrey solid 2px;
 }
 
-.button-addToAlbum{
-	margin-bottom: 10px;
-	border:lightgrey solid 1px;
+.tableTitle{
+	font-size: 33px;
+	padding: 27px 0px 27px 0px;
+}
+
+.button-addToAlbum,.button-delete{
+	padding: 0px 3px 0px 3px;
 	text-decoration:none; 
 	text-align:center;
 	cursor:pointer;
 }
+
 .button-addToAlbum:hover{
 	background-color: rgb(154, 238, 146);
 }
 
-.button-delete{
-	border:lightgrey solid 1px;
-	text-decoration:none; 
-	text-align:center;
-	cursor:pointer;
-}
 .button-delete:hover{
 	background-color: rgb(253, 164, 164);
 }
 
-.button-info{
-	margin-bottom: 10px;
-	padding-left: 15px;
-	padding-right: 15px;
-	border:lightgrey solid 1px;
-	text-decoration:none; 
-	text-align:center;
-	cursor:pointer;
-}
-.button-info:hover{
-	background-color: rgb(154, 238, 146);
-}
  /*---------------------------------*/
 
 .content{
@@ -249,7 +234,7 @@ a{text-decoration: none;}
 /* Colors */
 .shadow{
     border-radius: 10px;
-    box-shadow: 1px 3px 5px 1px #d8d8d8;
+    box-shadow: 0px 1px 3px 1px #d8d8d8;
 }
 
 .white,.hover-white:hover {
@@ -639,7 +624,7 @@ h3{
 		width: 100px;
 	}
 	.managebox input[type="submit"],.loginbox input[type="submit"]{
-		margin-left: 0%;
+		margin-left: 0;
 		font-size: 7px;
 		width: 30%;
 	}
@@ -651,7 +636,7 @@ h3{
 
 	.manageboxalb input[type="submit"]{
 		font-size: 7px;
-		margin-left: 0%;
+		margin-left: 0;
 	}
 
 	h3{

@@ -56,8 +56,8 @@ function show_plants($con)
 					<td> ' . $row['others'] . ' </td>
 					<td> ' . $row['date'] . ' </td>
 					<td>
-					<button class="button-addToAlbum shadow" id="add">Add to album</button>
-					<button class="button-delete shadow"><a href="delete.php?id=' . $row['id'] . '">Delete</a></button>
+					<a class="button-addToAlbum shadow" href="">Add to album</a>
+					<a class="button-delete shadow" href="delete.php?id=' . $row['id'] . '">Delete</a>
 					</td>
 					</tr>';
         }
@@ -115,8 +115,8 @@ function show_albums($con)
                     </td>
 					<td> ' . $row['name'] . ' </td>
 					<td>
-					<button class="button-addToAlbum shadow" id="">Share to..</button>
-					<button class="button-delete shadow"><a href="deletealbum.php?id=' . $row['id'] . '">Delete</a></button>
+					<a class="button-addToAlbum shadow" href="">Share to..</a>
+					<a class="button-delete shadow" href="deletealbum.php?id=' . $row['id'] . '">Delete</a>
 					</td>
 					</tr>';
         }
