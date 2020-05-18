@@ -122,3 +122,9 @@ function show_albums($con)
         }
     }
 }
+function show_user_name($con) {
+	$id = $_SESSION['user_id'];
+    $query = mysqli_query($con,"SELECT `username` FROM `users` WHERE `id` = '$id'");
+    $result = mysqli_fetch_array($query);
+    echo $result[0];
+}

@@ -8,6 +8,7 @@ require 'functions/users.php';
 require 'functions/plants.php';
 require 'functions/album.php';
 require 'functions/view.php';
+require 'functions/fpdf.php';
 
 $errors = array();
 ?>

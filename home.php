@@ -31,7 +31,7 @@ protected_page();
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
 			<a href="manage.php">Add plants</a>
 			<a href="albums.php">Albums</a>
-			<a href="#export">Export data</a>
+			<a href="exportdata.php">Export data</a>
 			<a href="logout.php">Logout</a>
 
 			<h4 class="padding-small">@<?php show_user_name($con) ?></h4>

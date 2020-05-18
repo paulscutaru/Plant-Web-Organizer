@@ -1,4 +1,5 @@
 <?php
+/*Script care genereaza dinamic rss feed */
 include 'core/init.php';
 protected_page();
 header("Content-Type: text/xml");

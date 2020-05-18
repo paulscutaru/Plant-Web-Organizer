@@ -42,13 +42,6 @@ function get_user_id($con, $user) {
     return $result[0];
 }
 
-function show_user_name($con) {
-	$id = $_SESSION['user_id'];
-    $query = mysqli_query($con,"SELECT `username` FROM `users` WHERE `id` = '$id'");
-    $result = mysqli_fetch_array($query);
-    echo $result[0];
-}
-
 function login($con, $user, $pwd) {
 	$user_id = get_user_id($con, $user);
 	$username = clean($user);
