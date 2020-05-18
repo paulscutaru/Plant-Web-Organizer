@@ -42,8 +42,11 @@ function show_plants($con)
                 $query = $query . " order by $sort desc";
         }
 
+        
         $result = mysqli_query($con, $query);
         while ($row = mysqli_fetch_array($result)) {
+            $queryalbums = "SELECT name,id FROM albums WHERE id_user='$id'";
+            $resultalbums = mysqli_query($con,$queryalbums);
             echo '
 					<tr>
                     <td>
@@ -55,8 +58,18 @@ function show_plants($con)
 					<td> ' . $row['uses'] . ' </td>
 					<td> ' . $row['others'] . ' </td>
 					<td> ' . $row['date'] . ' </td>
-					<td>
-					<a class="button-addToAlbum shadow" href="">Add to album</a>
+                    <td>
+                    
+                    <select name="album" id="album" class="button-addToAlbum shadow">
+                    
+                    ';
+                    while($rowalbums = mysqli_fetch_array($resultalbums))
+                    {
+                    echo '<option>'. $rowalbums['name'] . ' </option>';
+                    } 
+                    echo '                   
+                    </select>
+                    <input type="submit" value="Add to album" class="button-addToAlbum shadow" href="addtoalbum.php?id_plant=' . $row['id'] . 'id_album=' . $_GET['album'] . '"> </input>
 					<a class="button-delete shadow" href="delete.php?id=' . $row['id'] . '">Delete</a>
 					</td>
 					</tr>';

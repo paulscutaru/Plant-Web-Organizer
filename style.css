@@ -154,10 +154,6 @@ a{text-decoration: none;}
 	cursor:pointer;
 }
 
-.button-addToAlbum:hover{
-	background-color: rgb(154, 238, 146);
-}
-
 .button-delete:hover{
 	background-color: rgb(253, 164, 164);
 }
