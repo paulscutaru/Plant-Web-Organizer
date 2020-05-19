@@ -41,12 +41,10 @@ function show_plants($con)
             if ($sort != "-")
                 $query = $query . " order by $sort desc";
         }
-
-        
         $result = mysqli_query($con, $query);
         while ($row = mysqli_fetch_array($result)) {
             $queryalbums = "SELECT name,id FROM albums WHERE id_user='$id'";
-            $resultalbums = mysqli_query($con,$queryalbums);
+            $resultalbums = mysqli_query($con, $queryalbums);
             echo '
 					<tr>
                     <td>
@@ -59,20 +57,19 @@ function show_plants($con)
 					<td> ' . $row['others'] . ' </td>
 					<td> ' . $row['date'] . ' </td>
                     <td>
-                    
-                    <select name="album" id="album" class="button-addToAlbum shadow">
-                    
-                    ';
-                    while($rowalbums = mysqli_fetch_array($resultalbums))
-                    {
-                    echo '<option>'. $rowalbums['name'] . ' </option>';
-                    } 
-                    echo '                   
-                    </select>
-                    <input type="submit" value="Add to album" class="button-addToAlbum shadow" href="addtoalbum.php?id_plant=' . $row['id'] . 'id_album=' . $_GET['album'] . '"> </input>
-					<a class="button-delete shadow" href="delete.php?id=' . $row['id'] . '">Delete</a>
+                    <label>Add to album</label>
+			        <form action="addtoalbum.php" method="GET" enctype="multipart/form-data">
+                        <select name="album" id="album" class="button-addToAlbum shadow">';
+            while ($rowalbums = mysqli_fetch_array($resultalbums)) {
+                echo '<option>' . $rowalbums['name'] . ' </option>';
+            }
+            echo '</select>
+                    <input type="hidden" name="id_plant" value="' . $row['id'] . '"/>
+                    <input type="submit" value="Add" class="button-addToAlbum shadow" "></input>
+                    </form>
+                    <a class="button-delete shadow" href="delete.php?id=' . $row['id'] . '">Delete</a>
 					</td>
-					</tr>';
+                    </tr>';
         }
     }
 }
@@ -116,17 +113,25 @@ function show_albums($con)
         <td> - </td>
         <td> - </td>
         <td> - </td>
+        <td> - </td>
         </tr>';
     } else {
         $query = "SELECT * FROM albums where id_user='$id'";
         $result = mysqli_query($con, $query);
         while ($row = mysqli_fetch_array($result)) {
+            $id_album = $row['id'];
+            $queryplants = "SELECT photo,name FROM plants WHERE id_user=$id AND id_album=$id_album";
+            $resultplants = mysqli_query($con, $queryplants);
             echo '
 					<tr>
-                    <td>
-                    <img src="images/' . $row['photo'] . '" alt="image"/>
-                    </td>
-					<td> ' . $row['name'] . ' </td>
+                    <td><img src="images/' . $row['photo'] . '" alt="image"/></td>
+                    <td> ' . $row['name'] . ' </td>
+                    <td>';
+            while ($rowplants = mysqli_fetch_array($resultplants)) {
+                echo  '<img class="small-image" src="images/' . $rowplants['photo'] . '" alt="image"/>' . $rowplants['name'] . '. ';
+            }
+            echo
+                    '</td>
 					<td>
 					<a class="button-addToAlbum shadow" href="">Share to..</a>
 					<a class="button-delete shadow" href="deletealbum.php?id=' . $row['id'] . '">Delete</a>
@@ -135,9 +140,10 @@ function show_albums($con)
         }
     }
 }
-function show_user_name($con) {
-	$id = $_SESSION['user_id'];
-    $query = mysqli_query($con,"SELECT `username` FROM `users` WHERE `id` = '$id'");
+function show_user_name($con)
+{
+    $id = $_SESSION['user_id'];
+    $query = mysqli_query($con, "SELECT `username` FROM `users` WHERE `id` = '$id'");
     $result = mysqli_fetch_array($query);
     echo $result[0];
 }

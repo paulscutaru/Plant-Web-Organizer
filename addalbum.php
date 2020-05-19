@@ -27,12 +27,7 @@
                 <a href="albums.php">Go back to albums</a>
             </form>
         </div>
-
-
-
     </div>
-
-
 </body>
 
 </html>

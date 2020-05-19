@@ -44,12 +44,12 @@ protected_page();
 	<div class="showalbum scrollable bottombar">
 		<table>
 			<tr>
-				<th colspan="3"	class="tableTitle">My albums</th>
-				
+				<th colspan="4"	class="tableTitle">My albums</th>
 			</tr>
 			<tr>
 				<th>Photo</th>
 				<th>Name</th>
+				<th>Plants</th>
 				<th>Settings</th>
 			</tr>
 			<?php
