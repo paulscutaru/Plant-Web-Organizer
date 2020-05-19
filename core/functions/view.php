@@ -129,8 +129,12 @@ function show_albums($con)
                     <td> ' . $row['name'] . ' </td>
                     <td>';
             while ($rowplants = mysqli_fetch_array($resultplants)) {
-                echo  '<img class="small-image" src="images/' . $rowplants['photo'] . '" alt="image"/>' . $rowplants['name'] . '. ';
-            }
+                echo  '
+                    <div class="displayblock">
+                    <img class="small-image" src="images/' . $rowplants['photo'] . '" alt="image"></image>
+                    <label>' . $rowplants['name'] .'</label>
+                    </div>';
+                }
             echo
                 '</td>
 					<td>

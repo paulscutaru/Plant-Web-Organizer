@@ -63,7 +63,6 @@ input[type=text]:hover{
 }
 
 /*-------------------------*/
-
 a{text-decoration: none;}
 
 .button{
@@ -100,7 +99,6 @@ a{text-decoration: none;}
 	border: 1px solid grey;
 	font-size: 15px;
 }
-
 
 .submenu select{
 	margin-right: 2px;
@@ -225,7 +223,12 @@ a{text-decoration: none;}
 .scrollable{
 	overflow-x: hidden; 
     overflow-x: auto; 
-    text-align:justify; 
+}
+
+.scrollable .displayblock{
+	display: block;
+	text-align: left;
+	margin-left:15px;
 }
 
 .margin {margin: 16px}
