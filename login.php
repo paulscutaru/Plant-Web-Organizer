@@ -57,8 +57,7 @@ if (!empty($_POST)) {
 				header('Location: admin.php');
 				exit();
 			} else if ($result[0] == "blocked") {
-				header('Location: blocked.php');
-				exit();
+				$errors[] = 'This user has been blocked by the admin!';
 			} else {
 				header('Location: home.php');
 				exit();
