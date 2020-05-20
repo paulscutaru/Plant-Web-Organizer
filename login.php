@@ -45,18 +45,27 @@ if (!empty($_POST)) {
 		$errors[] = 'Please enter your username and password!';
 	} else if (!user_exists($con, $username)) {
 		$errors[] = 'The username does not exist!';
-	} 
-	else {
+	} else {
 		$login = login($con, $username, $password);
 		if (!$login) {
 			$errors[] = 'Wrong username or password!';
 		} else {
 			$_SESSION['user_id'] = $login;
-			header('Location: home.php');
-			exit();
+			$query = mysqli_query($con, "SELECT type FROM `users` WHERE id = $login");
+			$result = mysqli_fetch_array($query);
+			if ($result[0] == "admin") {
+				header('Location: admin.php');
+				exit();
+			} else if ($result[0] == "blocked") {
+				header('Location: blocked.php');
+				exit();
+			} else {
+				header('Location: home.php');
+				exit();
+			}
 		}
 	}
 }
-	if(!empty($errors))
-		echo get_errors($errors);
+if (!empty($errors))
+	echo get_errors($errors);
 ?>

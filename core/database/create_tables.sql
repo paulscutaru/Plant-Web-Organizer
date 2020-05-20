@@ -9,8 +9,9 @@ CREATE TABLE `users` (
  `password` varchar(256) NOT NULL,
  `email` varchar(30) NOT NULL,
  `date` date DEFAULT NULL,
+ `type` varchar(100) DEFAULT NULL,
  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `plants` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -26,7 +27,7 @@ CREATE TABLE `plants` (
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_user_plants` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) 
   ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 	
 CREATE TABLE `albums` (
@@ -36,4 +37,4 @@ CREATE TABLE `albums` (
  `name` varchar(50) NOT NULL,
  PRIMARY KEY (`id`),
  CONSTRAINT `fk_user_albums` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;

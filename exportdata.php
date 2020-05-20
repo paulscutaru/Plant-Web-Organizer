@@ -62,14 +62,5 @@ fgets($csv, 4096);
 fclose($csv);
 fclose($fp);
 
-$fh = fopen('output.html', 'w') or die("can't open file");
-fwrite($fh, '<html><body>');
-fwrite($fh, '<table><tr><th>Description</th><th>Anounce type</th><th>Anounce categori</th><th>Date</th><th>Anounce city</th></tr>');
-foreach ($results_post as $row_html) {
-    fwrite($fh, "<tr><td>" . $row_html["id"] . "</td><td>" . $row_html["photo"] . "</td><td>" . $row_html["name"] . "</td><td>" . $row_html["region"] . "</td><td>" . $row_html["color"] . $row_html["uses"] . $row_html["others"] . $row_html["date"] ."</td><td></tr>");
-}
-fwrite($fh, "</table>");
-fwrite($fh, '</body></html>');
-fclose($fh);
 header("Location: home.php");
 exit();

@@ -64,68 +64,66 @@ protected_page();
 	<!-- PAGE CONTENT -->
 	<div class="principal">
 
-		<!-- Navigation -->
-		<nav>
-			<div class="margin-left">
-				<h1>HerbaWeb</h1>
-			</div>
+		<div class="margin-left">
+			<h1>HerbaWeb</h1>
+		</div>
 
-			<form action="home.php" method="GET" enctype="multipart/form-data">
-				<div class="categories">
-					<div class="section">
-						<div class="submenu">
-							<h4 class="center">Region</h4>
-							<select name="region" id="region" class="options white padding">
-								<?php
-								show_categories($con, 'region');
-								?>
-							</select>
-						</div>
-						<div class="submenu">
-							<h4 class="center">Color</h4>
-							<select name="color" id="color" class="options white padding">
-								<?php
-								show_categories($con, 'color');
-								?>
-							</select>
-						</div>
-						<div class="submenu">
-							<h4 class="center">Uses</h4>
-							<select name="uses" id="uses" class="options white padding">
-								<?php
-								show_categories($con, 'uses');
-								?>
-							</select>
-						</div>
-						<div class="submenu">
-							<h4 class="center">Other</h4>
-							<select name="others" id="others" class="options white padding ">
-								<?php
-								show_categories($con, 'others');
-								?>
-							</select>
-						</div>
+		<form action="home.php" method="GET" enctype="multipart/form-data">
+			<div class="categories">
+				<div class="section">
+					<div class="submenu">
+						<h4 class="center">Region</h4>
+						<select name="region" id="region" class="options white padding">
+							<?php
+							show_categories($con, 'region');
+							?>
+						</select>
 					</div>
-
-					<div class="search">
-						<p>Search name:</p>
-						<input type="text" name="search" id="search" placeholder=" Search">
+					<div class="submenu">
+						<h4 class="center">Color</h4>
+						<select name="color" id="color" class="options white padding">
+							<?php
+							show_categories($con, 'color');
+							?>
+						</select>
 					</div>
-
-					<div class="sortby">
-						<p>Sort by:</p>
-						<select name="sort" id="sort">
-							<option value="-">-</option>
-							<option value="Date">Date</option>
+					<div class="submenu">
+						<h4 class="center">Uses</h4>
+						<select name="uses" id="uses" class="options white padding">
+							<?php
+							show_categories($con, 'uses');
+							?>
+						</select>
+					</div>
+					<div class="submenu">
+						<h4 class="center">Other</h4>
+						<select name="others" id="others" class="options white padding ">
+							<?php
+							show_categories($con, 'others');
+							?>
 						</select>
 					</div>
 				</div>
 
-				<div>
-					<input type="submit" name="submit" title="Press this button to submit or to refresh!" class="margin-left white button-submit shadow">
+				<div class="search">
+					<p>Search name:</p>
+					<input type="text" name="search" id="search" placeholder=" Search">
 				</div>
-			</form>
-		</nav>
+
+				<div class="sortby">
+					<p>Sort by:</p>
+					<select name="sort" id="sort">
+						<option value="-">-</option>
+						<option value="Date">Date</option>
+					</select>
+				</div>
+			</div>
+
+			<div>
+				<input type="submit" name="submit" title="Press this button to submit or to refresh!" class="margin-left white button-submit shadow">
+			</div>
+		</form>
+
 
 		<!-- Table of plants-->
 		<div class="topbar bottombar scrollable">
