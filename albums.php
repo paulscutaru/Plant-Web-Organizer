@@ -40,7 +40,7 @@ protected_page();
 	</nav>
 
 	<!--AFISARE ALBUME-->
-	<div class="showalbum scrollable bottombar">
+	<div class="showalbum scrollable topbar bottombar">
 		<table>
 			<tr>
 				<th colspan="4"	class="tableTitle">My albums</th>

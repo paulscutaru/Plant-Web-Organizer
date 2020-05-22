@@ -59,14 +59,14 @@ function show_plants($con)
                     <td>
                     <label>Add to album</label>
 			        <form action="addtoalbum.php" method="GET" enctype="multipart/form-data">
-                        <select name="album" id="album" class="button-addToAlbum shadow">
+                        <select name="album" class="button-addToAlbum shadow">
                          <option>None</option>';
                          while ($rowalbums = mysqli_fetch_array($resultalbums)) {
                           echo '<option>' . $rowalbums['name'] . ' </option>';
                          }
                     echo '</select>
                     <input type="hidden" name="id_plant" value="' . $row['id'] . '"/>
-                    <input type="submit" value="Add" class="button-addToAlbum shadow" "></input>
+                    <input type="submit" value="Add" class="button-addToAlbum shadow"/>
                     </form>
                     <a class="button-delete shadow" href="delete.php?id=' . $row['id'] . '">Delete</a>
 					</td>
@@ -131,7 +131,7 @@ function show_albums($con)
             while ($rowplants = mysqli_fetch_array($resultplants)) {
                 echo  '
                     <div class="displayblock">
-                    <img class="small-image" src="images/' . $rowplants['photo'] . '" alt="image"></image>
+                    <img class="small-image" src="images/' . $rowplants['photo'] . '" alt="image"/>
                     <label>' . $rowplants['name'] .'</label>
                     </div>';
                 }
