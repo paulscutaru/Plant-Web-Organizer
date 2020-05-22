@@ -13,4 +13,9 @@
         $result = mysqli_fetch_array($query);
         return $result[0] > 0 ? true : false;
     }
+    function get_album_id($con, $name) {
+        $query = mysqli_query($con,"SELECT `id` FROM `albums` WHERE `name` = '$name'");
+        $result = mysqli_fetch_array($query);
+        return $result[0];
+    }
 ?>
