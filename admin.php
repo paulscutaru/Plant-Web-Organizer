@@ -13,6 +13,15 @@ require 'core/functions/administrator.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "16%";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0px";
+        }
+    </script>
 </head>
 
 <body class="light-grey content">
@@ -30,15 +39,6 @@ require 'core/functions/administrator.php';
             <h4 class="padding-small">@<?php show_user_name($con) ?></h4>
         </div>
     </nav>
-    <script>
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "16%";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0px";
-        }
-    </script>
     <div class="principal">
         <h2 class="center">Admin</h2>
 

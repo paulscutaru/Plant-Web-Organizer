@@ -10,6 +10,15 @@ protected_page();
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="style.css">
+	<script>
+			function openNav() {
+				document.getElementById("mySidebar").style.width = "201px";
+			}
+
+			function closeNav() {
+				document.getElementById("mySidebar").style.width = "0px";
+			}
+		</script>
 </head>
 <body class="light-grey content">
 <nav>
@@ -28,16 +37,6 @@ protected_page();
 			<a href="addalbum.php">Add album</a>
 			<a href="home.php">Main page</a>
 		</div>
-
-		<script>
-			function openNav() {
-				document.getElementById("mySidebar").style.width = "201px";
-			}
-
-			function closeNav() {
-				document.getElementById("mySidebar").style.width = "0px";
-			}
-		</script>
 	</nav>
 
 	<!--AFISARE ALBUME-->
