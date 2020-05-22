@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+    Documentatie
+  </title>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <center>
+    <h1>Plant Web Organizer</h1>
+  </center>
+
+  <p><b>Acest document descrie proiectul numit "Plant Web Organizer" din cadrul disciplinei Tehnologii
+      Web, anul 2020.<br>
+      Membrii echipei: Grupa 2A7 - Scutaru Paul-Alexandru, Panainte Alexandru, Burghelea George.</b>
+  </p>
+
+  <h3><b>1.Introducere</b></h3>
+  <p>Sa se implementeze o aplicatie Web de tip ierbar digital, oferind suport pentru organizarea colectiilor
+    reprezentarilor grafice ale plantelor presate si atributelor aferente. Pe baza facilitatilor de cautare
+    multi-criteriala, se vor genera, recomanda si partaja albume tematice – e.g., plante medicinale, flori din zona
+    montana si altele. Se vor genera statistici diverse disponibile in formate deschise – minimal, CSV si PDF.
+    Se va crea, de asemenea, un clasament al celor mai populare plante colectate, disponibil si ca flux de date RSS.</p>
+
+  <h3><b>2. Etapele dezvoltarii proiectului</b></h3>
+  1. Design/Arhitectura proiect<br>
+  2. Modelare baza de date <br>
+  3. Creare pagini front-end <br>
+  4. Implementare scripturi MySQL<br>
+  5. Implementare scripturi PHP back-end<br>
+  6. Adaugare functionalitati AJAX<br>
+  7. Testing<br>
+
+  <h3><b>3.Tehnologii utilizate</b></h3>
+
+  <a href="https://en.wikipedia.org/wiki/HTML" target="_blank">HTML5 - Hypertext Markup Language </a><br>
+  <br>
+  <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank">CSS - Cascading Style Sheets</a><br>
+  <br>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">Javascript</a><br>
+  <br>
+  <a href="https://www.php.net/" target="_blank">PHP - Hypertext Preprocessor</a><br>
+
+  <br>
+  <a href="https://www.mysql.com/" target="_blank">MySQL</a><br>
+  <br>
+  <a href="https://www.w3schools.com/xml/ajax_intro.asp" target="_blank">AJAX - Asynchronous JavaScript and XML</a><br>
+
+  <h3><b>5. Structura</b></h3>
+
+  Tabelele din baza de date:<br>
+  • users(id,username,password,email,date,type)<br>
+  • plants(id,id_user,id_album,photo,name,region,color,uses,others,date)<br>
+  • albums(id,id_user,photo,name)<br>
+  • recommended_albums(id,photo,name)<br>
+
+  <br>Pagina de pornire<br>
+
+  <br>Servicii folosite:<br>
+  <a href="https://github.com/" target="_blank">Github</a><br>
+
+  <br>Bibliografie:<br>
+</body>
+
+</html>

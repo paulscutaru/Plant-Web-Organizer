@@ -54,6 +54,7 @@ protected_page();
 			<a href="manage.php">Add plants</a>
 			<a href="albums.php">Albums</a>
 			<a href="exportdata.php">Export data</a>
+			<a href="documentatie/scholarly.html">About</a>
 			<a href="logout.php">Logout</a>
 
 			<h4 class="padding-small">@<?php show_user_name($con) ?></h4>
