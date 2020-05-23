@@ -104,6 +104,54 @@ function show_categories($con, $category)
         }
     }
 }
+function show_recommended_albums($con)
+{
+    $id = $_SESSION['user_id'];
+    $query = "SELECT COUNT(*) FROM recommended_albums";
+    $count = mysqli_fetch_array(mysqli_query($con, $query));
+    if ($count[0] == 0) {
+        echo '<tr>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        </tr>';
+    } else {
+        
+        $query = "SELECT * FROM recommended_albums ";
+        $result = mysqli_query($con, $query);
+        $data = mysqli_fetch_all($result);
+        $query = 'SELECT * FROM albums WHERE id IN(';
+        while($row = mysqli_fetch_array($result))
+        $query = $query. $row[0] . ',';
+        echo $query;
+        $result = mysqli_query($con, $query);
+        while ($row = mysqli_fetch_array($result)) {
+            $id_album = $row['id'];
+            $queryplants = "SELECT photo,name FROM plants WHERE id_user=$id AND id_album=$id_album";
+            $resultplants = mysqli_query($con, $queryplants);
+            echo '
+					<tr>
+                    <td><img src="images/' . $row['photo'] . '" alt="image"/></td>
+                    <td> ' . $row['name'] . ' </td>
+                    <td>';
+            while ($rowplants = mysqli_fetch_array($resultplants)) {
+                echo  '
+                    <div class="displayblock">
+                    <img class="small-image" src="images/' . $rowplants['photo'] . '" alt="image"/>
+                    <label>' . $rowplants['name'] .'</label>
+                    </div>';
+                }
+            echo
+                '</td>
+					<td>
+					<a class="button-addToAlbum shadow" href="sharealbum.php?id=' . $row['id'] . '">Share</a>
+					<a class="button-delete shadow" href="deletealbum.php?id=' . $row['id'] . '">Delete</a>
+					</td>
+					</tr>';
+        }
+    }
+}
 function show_albums($con)
 {
     $id = $_SESSION['user_id'];
@@ -138,7 +186,7 @@ function show_albums($con)
             echo
                 '</td>
 					<td>
-					<a class="button-addToAlbum shadow" href="">Share to..</a>
+					<a class="button-addToAlbum shadow" href="sharealbum.php?id=' . $row['id'] . '">Share</a>
 					<a class="button-delete shadow" href="deletealbum.php?id=' . $row['id'] . '">Delete</a>
 					</td>
 					</tr>';

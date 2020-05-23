@@ -38,9 +38,9 @@ protected_page();
 			<a href="home.php">Main page</a>
 		</div>
 	</nav>
-
+			
 	<!--AFISARE ALBUME-->
-	<div class="showalbum scrollable topbar bottombar">
+	<div class="showrecommended scrollable topbar bottombar">
 		<table>
 			<tr>
 				<th colspan="4"	class="tableTitle">My albums</th>
@@ -56,6 +56,24 @@ protected_page();
 			?>
 		</table>
 	</div>
+	<!--ALBUME RECOMANDATE-->
+	<div class="showalbum scrollable topbar bottombar">
+		<table>
+			<tr>
+				<th colspan="4"	class="tableTitle">Recommended albums</th>
+			</tr>
+			<tr>
+				<th>Photo</th>
+				<th>Name</th>
+				<th>Plants</th>
+				<th>Settings</th>
+			</tr>
+			<?php
+				show_recommended_albums($con);
+			?>
+		</table>
+	</div>
+	
 
 </body>
 </html>
