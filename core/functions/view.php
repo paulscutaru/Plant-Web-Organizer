@@ -59,12 +59,12 @@ function show_plants($con)
                     <td>
                     <label>Add to album</label>
 			        <form action="addtoalbum.php" method="GET" enctype="multipart/form-data">
-                        <select name="album" class="button-addToAlbum shadow">
+                        <div><select name="album" class="button-addToAlbum shadow">
                          <option>None</option>';
-                         while ($rowalbums = mysqli_fetch_array($resultalbums)) {
-                          echo '<option>' . $rowalbums['name'] . ' </option>';
-                         }
-                    echo '</select>
+            while ($rowalbums = mysqli_fetch_array($resultalbums)) {
+                echo '<option>' . $rowalbums['name'] . ' </option>';
+            }
+            echo '</select></div>
                     <input type="hidden" name="id_plant" value="' . $row['id'] . '"/>
                     <input type="submit" value="Add" class="button-addToAlbum shadow"/>
                     </form>
@@ -117,18 +117,16 @@ function show_recommended_albums($con)
         <td> - </td>
         </tr>';
     } else {
-        
-        $query = "SELECT * FROM recommended_albums ";
+        $query = "SELECT id FROM recommended_albums";
         $result = mysqli_query($con, $query);
-        $data = mysqli_fetch_all($result);
-        $query = 'SELECT * FROM albums WHERE id IN(';
-        while($row = mysqli_fetch_array($result))
-        $query = $query. $row[0] . ',';
-        echo $query;
-        $result = mysqli_query($con, $query);
+        $row = mysqli_fetch_array($result);
+        $query2 = "SELECT * FROM albums where id_user!=$id and id=" . $row['id'];
+        while ($row = mysqli_fetch_array($result))
+            $query2 = $query2 . " or id=" . $row['id'];
+        $result = mysqli_query($con, $query2);
         while ($row = mysqli_fetch_array($result)) {
             $id_album = $row['id'];
-            $queryplants = "SELECT photo,name FROM plants WHERE id_user=$id AND id_album=$id_album";
+            $queryplants = "SELECT photo,name FROM plants WHERE id_album=$id_album";
             $resultplants = mysqli_query($con, $queryplants);
             echo '
 					<tr>
@@ -139,14 +137,14 @@ function show_recommended_albums($con)
                 echo  '
                     <div class="displayblock">
                     <img class="small-image" src="images/' . $rowplants['photo'] . '" alt="image"/>
-                    <label>' . $rowplants['name'] .'</label>
+                    <label>' . $rowplants['name'] . '</label>
                     </div>';
-                }
+            }
             echo
                 '</td>
 					<td>
-					<a class="button-addToAlbum shadow" href="sharealbum.php?id=' . $row['id'] . '">Share</a>
-					<a class="button-delete shadow" href="deletealbum.php?id=' . $row['id'] . '">Delete</a>
+					<a class="button-addToAlbum shadow" href="getalbum.php?id=' . $row['id'] . '">Get this album</a>
+					<a class="button-delete shadow" href="deleterecommended.php?id=' . $row['id'] . '">Delete</a>
 					</td>
 					</tr>';
         }
@@ -180,9 +178,9 @@ function show_albums($con)
                 echo  '
                     <div class="displayblock">
                     <img class="small-image" src="images/' . $rowplants['photo'] . '" alt="image"/>
-                    <label>' . $rowplants['name'] .'</label>
+                    <label>' . $rowplants['name'] . '</label>
                     </div>';
-                }
+            }
             echo
                 '</td>
 					<td>

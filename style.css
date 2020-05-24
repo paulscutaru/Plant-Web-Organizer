@@ -613,7 +613,7 @@ h3{
 	display:table;
 	clear:both;
 }
-.showalbum{
+.showalbum,.showrecommended{
 	width: 70%;
 	height: 75%;
 	left: 15%;
@@ -623,15 +623,8 @@ h3{
 	padding-bottom:20px;
 }
 .showrecommended{
-	width: 70%;
-	height: 75%;
-	left: 15%;
-	position: relative;
-	padding:10px 30px;
-	margin-top: 40px;
-	padding-bottom:20px;
+	top: 80%;
 }
-
 .scrollable .small-image{
 	height: 45px;
 	width: 45px;

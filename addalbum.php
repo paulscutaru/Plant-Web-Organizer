@@ -57,7 +57,7 @@ if (empty($_POST) === false && isset($_FILES['photo']) && empty($errors) === tru
         'photo' => $_FILES['photo']['name'],
         'name' => $_POST['name'],
     );
-    if (add_album($con, $album_data) === TRUE) {
+    if (add_album($con, $album_data)) {
         //print_r($album_data);
         header('Location: albums.php');
         exit();

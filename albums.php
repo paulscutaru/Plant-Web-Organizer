@@ -40,7 +40,7 @@ protected_page();
 	</nav>
 			
 	<!--AFISARE ALBUME-->
-	<div class="showrecommended scrollable topbar bottombar">
+	<div class="showalbum scrollable topbar">
 		<table>
 			<tr>
 				<th colspan="4"	class="tableTitle">My albums</th>
@@ -57,7 +57,7 @@ protected_page();
 		</table>
 	</div>
 	<!--ALBUME RECOMANDATE-->
-	<div class="showalbum scrollable topbar bottombar">
+	<div class="showrecommended scrollable topbar">
 		<table>
 			<tr>
 				<th colspan="4"	class="tableTitle">Recommended albums</th>
