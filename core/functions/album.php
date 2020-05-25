@@ -26,3 +26,92 @@ function get_album_id($con, $name)
     $result = mysqli_fetch_array($query);
     return $result[0];
 }
+function show_albums($con)
+{
+    $id = $_SESSION['user_id'];
+    $query = "SELECT COUNT(*) FROM albums where id_user='$id'";
+    $count = mysqli_fetch_array(mysqli_query($con, $query));
+    if ($count[0] == 0) {
+        echo '<tr>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        </tr>';
+    } else {
+        $query = "SELECT * FROM albums where id_user='$id'";
+        $result = mysqli_query($con, $query);
+        while ($row = mysqli_fetch_array($result)) {
+            $id_album = $row['id'];
+            $queryplants = "SELECT photo,name FROM plants WHERE id_user=$id AND id_album=$id_album";
+            $resultplants = mysqli_query($con, $queryplants);
+            echo '
+					<tr>
+                    <td><img src="images/' . $row['photo'] . '" alt="image"/></td>
+                    <td> ' . $row['name'] . ' </td>
+                    <td>';
+            while ($rowplants = mysqli_fetch_array($resultplants)) {
+                echo  '
+                    <div class="displayblock">
+                    <img class="small-image" src="images/' . $rowplants['photo'] . '" alt="image"/>
+                    <label>' . $rowplants['name'] . '</label>
+                    </div>';
+            }
+            echo
+                '</td>
+                    <td>
+                    <div>
+                    <a class="button-addToAlbum shadow" href="sharealbum.php?id=' . $row['id'] . '">Share</a>
+                    </div>
+					<a class="button-delete shadow" href="deletealbum.php?id=' . $row['id'] . '">Delete</a>
+					</td>
+					</tr>';
+        }
+    }
+}
+function show_recommended_albums($con)
+{
+    $id = $_SESSION['user_id'];
+    $query = "SELECT COUNT(*) FROM recommended_albums";
+    $count = mysqli_fetch_array(mysqli_query($con, $query));
+    if ($count[0] == 0) {
+        echo '<tr>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        </tr>';
+    } else {
+        $query = "SELECT id FROM recommended_albums";
+        $result = mysqli_query($con, $query);
+        $row = mysqli_fetch_array($result);
+        $query2 = "SELECT * FROM albums where id_user!=$id and id=" . $row['id'];
+        while ($row = mysqli_fetch_array($result))
+            $query2 = $query2 . " or id=" . $row['id'];
+        $result = mysqli_query($con, $query2);
+        while ($row = mysqli_fetch_array($result)) {
+            $id_album = $row['id'];
+            $queryplants = "SELECT photo,name FROM plants WHERE id_album=$id_album";
+            $resultplants = mysqli_query($con, $queryplants);
+            echo '
+					<tr>
+                    <td><img src="images/' . $row['photo'] . '" alt="image"/></td>
+                    <td> ' . $row['name'] . ' </td>
+                    <td>';
+            while ($rowplants = mysqli_fetch_array($resultplants)) {
+                echo  '
+                    <div class="displayblock">
+                    <img class="small-image" src="images/' . $rowplants['photo'] . '" alt="image"/>
+                    <label>' . $rowplants['name'] . '</label>
+                    </div>';
+            }
+            echo
+                '</td>
+					<td>
+					<a class="button-addToAlbum shadow" href="getalbum.php?id=' . $row['id'] . '">Get this album</a>
+					<a class="button-delete shadow" href="deleterecommended.php?id=' . $row['id'] . '">Delete</a>
+					</td>
+					</tr>';
+        }
+    }
+}

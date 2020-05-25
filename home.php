@@ -14,27 +14,27 @@ protected_page();
 	<link rel="stylesheet" href="style.css">
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.mysite.com/rss/rss2.xml" />
 	<script>
-			function openNav() {
-				document.getElementById("mySidebar").style.width = "16%";
-			}
+		function openNav() {
+			document.getElementById("mySidebar").style.width = "16%";
+		}
 
-			function closeNav() {
-				document.getElementById("mySidebar").style.width = "0px";
-			}
-			//AJAX
-			function loadDoc() {
-				var xhttp = new XMLHttpRequest();
-				xhttp.onreadystatechange = function() {
-					if (this.readyState == 4 && this.status == 200) {
-						var result = this.responseText.split("\n");
-						var id = Math.floor(Math.random() * result.length);
-						document.getElementById("fact").innerHTML = result[id];
-					}
-				};
-				xhttp.open("GET", "facts.txt", true);
-				xhttp.send();
-			}
-		</script>
+		function closeNav() {
+			document.getElementById("mySidebar").style.width = "0px";
+		}
+		//AJAX
+		function loadDoc() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					var result = this.responseText.split("\n");
+					var id = Math.floor(Math.random() * result.length);
+					document.getElementById("fact").innerHTML = result[id];
+				}
+			};
+			xhttp.open("GET", "facts.txt", true);
+			xhttp.send();
+		}
+	</script>
 </head>
 
 <body class="light-grey content">
@@ -151,9 +151,13 @@ protected_page();
 			</table>
 		</div>
 
-		<div class="listbox">
-			<button class="button-fact margin-top" onclick="loadDoc()">Facts</button>
-			<p id="fact" class="margin-left margin-top"></p>
+		<div class="bottombox topbar bottombar">
+		<h4 class=" margin-left">Get a random fact</h4>
+			<div class="listbox">
+				
+				<button class="button-fact margin-top margin-left" onclick="loadDoc()">Facts</button>
+				<p id="fact" class="margin-left margin-top"></p>
+			</div>
 		</div>
 
 		<!-- Bottom box -->

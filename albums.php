@@ -36,6 +36,7 @@ protected_page();
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">  x  </a>
 			<a href="addalbum.php">Add album</a>
 			<a href="home.php">Main page</a>
+			<h4 class="padding-small">@<?php show_user_name($con) ?></h4>
 		</div>
 	</nav>
 			

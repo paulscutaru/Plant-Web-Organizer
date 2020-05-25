@@ -50,3 +50,11 @@ function login($con, $user, $pwd) {
 	$result = mysqli_fetch_array($query);
 	return $result[0] > 0 ? $user_id : false;
 }
+
+function show_user_name($con)
+{
+    $id = $_SESSION['user_id'];
+    $query = mysqli_query($con, "SELECT `username` FROM `users` WHERE `id` = '$id'");
+    $result = mysqli_fetch_array($query);
+    echo $result[0];
+}

@@ -211,13 +211,13 @@ a{text-decoration: none;}
 }
 
 .bottombar {
-	border-bottom: 6px solid lightgrey;
+	border-bottom: 5px solid lightgrey;
 	margin-bottom: 40px;
 }
 
 .topbar {
 	margin-top: 25px;
-	border-top: 6px solid lightgrey;
+	border-top: 5px solid lightgrey;
 }
 
 .scrollable{
@@ -615,7 +615,7 @@ h3{
 }
 .showalbum,.showrecommended{
 	width: 70%;
-	height: 75%;
+	height: 100%;
 	left: 15%;
 	position: absolute;
 	padding:10px 30px;
@@ -623,7 +623,7 @@ h3{
 	padding-bottom:20px;
 }
 .showrecommended{
-	top: 80%;
+	top: 100%;
 }
 .scrollable .small-image{
 	height: 45px;
@@ -664,7 +664,7 @@ h3{
 
 @media screen and (max-width: 768px) {
 	.bottombox{
-		height: 15%;
+		height: 20%;
 	}
 	.principal{
 		height: 60%;
