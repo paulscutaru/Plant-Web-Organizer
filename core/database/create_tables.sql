@@ -36,5 +36,11 @@ CREATE TABLE `albums` (
  `photo` varchar(256) NOT NULL,
  `name` varchar(50) NOT NULL,
  PRIMARY KEY (`id`),
+ KEY `fk_user_albums` (`id_user`),
  CONSTRAINT `fk_user_albums` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `recommended_albums` (
+ `id` int(11) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
