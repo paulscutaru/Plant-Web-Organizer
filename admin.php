@@ -24,7 +24,7 @@ require 'core/functions/administrator.php';
     </script>
 </head>
 
-<body class="light-grey content">
+<body class="light-grey">
     <div>
         <img src="images/icon.png" alt="icon.png" class="icon">
     </div>
@@ -40,10 +40,8 @@ require 'core/functions/administrator.php';
         </div>
     </nav>
     <div class="principal">
-        <h2 class="center">Admin</h2>
-
         <!-- Table of users-->
-        <div class="topbar scrollable">
+        <div class="scrollable">
             <table>
                 <tr>
                     <th colspan="7" class="tableTitle">

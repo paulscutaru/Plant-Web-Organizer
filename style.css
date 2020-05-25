@@ -1,6 +1,8 @@
 /* Html extract */
-* { box-sizing: border-box ; margin:10px 0;}
-button,input,select,textarea,optgroup{font:inherit;margin:0}
+* { box-sizing: border-box ; 
+	margin:10px 0; 
+	font-family: Arial, Helvetica, sans-serif;}
+button,input,select{margin:0}
 
 html{
 	height: 100%;
@@ -8,11 +10,7 @@ html{
 
 h1{
 	font-size: 48px;
-	content: "";  
-    width:240px; 
-	border-bottom: 1mm solid #ccc;
-	background: linear-gradient(-45deg, #ee7752, #B06DCB, #A749CD, #ee7752);
-  	background-size: 400% 400%;
+	background: linear-gradient(-45deg, #ee7752, #B06DCB, #A749CD, #ee7752);	
   	animation: gradient 15s ease infinite;
   	-webkit-background-clip: text;
   	-webkit-text-fill-color: transparent;
@@ -100,21 +98,17 @@ a{text-decoration: none;}
 	width:auto
 }
 
-.categories:after,.categories:before{
-	content:"";
-	clear:both;
-}
-
 .delete{
 	position: absolute;
 	left: 75%;
 	top: 28%;
 }
 
-/*-------------TABLE OF PLANTS-----------*/
+/*-------------PLANTS-----------*/
 .scrollable table{
 	text-align: center;
 	background: white;
+	border: lightgrey solid 2px;
 	border: lightgrey solid 4px;
 	width: 100%;
 	padding-bottom: 30px;
@@ -124,19 +118,39 @@ a{text-decoration: none;}
 	height: 10%;
 	border: lightgrey solid 1px;
 }
-.scrollable th{
-	padding: 10px 0px 10px 0px;
-	background:lightgrey;
-}
+
 .scrollable img{
-	height: 120px;
-	width: 120px;
-	border: lightgrey solid 2px;
+	height: 230px;
+	width: 230px;
+}
+.scrollable img:hover {
+	transform: scale(1.4);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
 
-.tableTitle{		
-	font-size: 25px;
-	padding: 15px 0px 15px 0px;
+.tableTitle{
+	font-size: 33px;
+	padding: 27px 0px 27px 0px;
+}
+
+.scrollable:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.content{
+	float: left;
+	text-align: center;
+	background: white;
+	padding-bottom: 10px;
+	margin-left: 14px;
+	width: 31%;
+}
+
+.align-left{
+	text-align:left;
+	margin-left: 16%;
 }
 
 .button-addToAlbum,.button-delete{
@@ -167,11 +181,6 @@ a{text-decoration: none;}
 }
 
  /*---------------------------------*/
-
-.content{
-	font-family:"Segoe UI",Arial,sans-serif;
-	font-size: 15px;
-}
 
 .hide {
 	display: none
@@ -331,7 +340,9 @@ a{text-decoration: none;}
 }
 
 /*--------------------------*/
-
+.text-left{
+	text-align: left;
+}
 .principal{
 	margin-left: 17%;
 	top:7%;
@@ -457,10 +468,6 @@ h3{
 }
 .list a{
 	font-size: large;
-}
-.randomPhoto{
-	width: 100px;
-	height: 100px;
 }
 
 /*--------Manage box for 'Add plants' page --------*/
@@ -653,10 +660,12 @@ h3{
 	h3{
 		font-size: 12px;
 	}
-	
-}
 
-@media screen and (max-width: 768px) {
+	.scrollable img{
+		width: 120px;
+		height: 120px;
+	}
+	
 	.bottombox{
 		height: 20%;
 	}
@@ -677,21 +686,12 @@ h3{
 		width: 55px;
 		height: 55px;
 	}
+	
 	.scrollable{
 		height: 75%;
 	}
-	.scrollable td{
-		border: lightgrey solid 1px;
-	}
-	.scrollable img{
-		width: 15px;
-		height: 15px;
-		padding: 0px;
-		border: none;
-	}
-	.scrollable .small-image{
-	height: 10px;
-	width: 10px;
+	.scrollable table{
+		font-size:8px;
 	}
 	.content table,.sidebar a,.sidebar .closebtn{
 		font-size:7px;
@@ -699,7 +699,7 @@ h3{
 	h1,h2,.tableTitle{
 		font-size: 15px;
 	}
-	h4,select,p,input,.listbox a, .listbox li{
+	h4,select,p,input,.listbox a, .listbox li,li,a{
 		font-size: 8px;
 	}
 	.categories input[type="text"]{
@@ -740,5 +740,13 @@ h3{
 	}
 	.bottombar{
 		margin-bottom: 0px;
+	}
+	
+	.scrollable img{
+		width: 60px;
+		height: 60px;
+	}
+	ul{
+		margin-left:8%;
 	}
 }

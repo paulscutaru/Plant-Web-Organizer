@@ -64,31 +64,34 @@ function show_plants($con)
             $queryalbums = "SELECT name,id FROM albums WHERE id_user='$id'";
             $resultalbums = mysqli_query($con, $queryalbums);
             echo '
-					<tr>
-                    <td>
-                    <img src="images/' . $row['photo'] . '" alt="image"/>
-                    </td>
-					<td> ' . $row['name'] . ' </td>
-					<td> ' . $row['region'] . ' </td>
-					<td> ' . $row['color'] . ' </td>
-					<td> ' . $row['uses'] . ' </td>
-					<td> ' . $row['others'] . ' </td>
-					<td> ' . $row['date'] . ' </td>
-                    <td>
-                    <label>Add to album</label>
+                    <div class="content shadow">
+                        <a class="button-delete shadow" href="delete.php?id=' . $row['id'] . '">Delete</a>
+                        <h4> ' . $row['name'] . ' </h4>
+                        <img src="images/' . $row['photo'] . '" alt="image" class="shadow"/>
+                        <div class="align-left">
+                            <ul>
+					            <li> Region: ' . $row['region'] . ' </li>
+					            <li> Color: ' . $row['color'] . ' </li>
+					            <li> Uses: ' . $row['uses'] . ' </li>
+					            <li> Others: ' . $row['others'] . ' </li>
+                                <li> Date: ' . $row['date'] . ' </li>
+                            </ul>
+                        </div> 
 			        <form action="addtoalbum.php" method="GET" enctype="multipart/form-data">
-                        <div><select name="album" class="button-addToAlbum shadow">
-                         <option>None</option>';
+                        <div>
+                            <select name="album" class="button-addToAlbum shadow">
+                                <option>None</option>';
             while ($rowalbums = mysqli_fetch_array($resultalbums)) {
                 echo '<option>' . $rowalbums['name'] . ' </option>';
             }
-            echo '</select></div>
-                    <input type="hidden" name="id_plant" value="' . $row['id'] . '"/>
-                    <input type="submit" value="Add" class="button-addToAlbum shadow"/>
+            echo '
+                            </select>
+                            <input type="hidden" name="id_plant" value="' . $row['id'] . '"/>
+                            <input type="submit" value="Add" class="button-addToAlbum shadow"/>
+                        </div>
                     </form>
-                    <a class="button-delete shadow" href="delete.php?id=' . $row['id'] . '">Delete</a>
-					</td>
-                    </tr>';
+                    
+					</div>';
         }
     }
 }

@@ -37,7 +37,7 @@ protected_page();
 	</script>
 </head>
 
-<body class="light-grey content">
+<body class="light-grey">
 
 	<!-- Sidebar -->
 	<nav>
@@ -125,36 +125,18 @@ protected_page();
 		</form>
 
 
-		<!-- Table of plants-->
-		<div class="scrollable">
-			<table>
-				<tr>
-					<th colspan="8" class="tableTitle">
-						My plants
-					</th>
-				</tr>
-				<tr>
-					<th>Photo</th>
-					<th>Name</th>
-					<th>Region</th>
-					<th>Color</th>
-					<th>Uses</th>
-					<th>Others</th>
-					<th>Date</th>
-					<th>Settings</th>
-				</tr>
-
-				<?php
-				show_plants($con);
-				?>
-
-			</table>
+		<!-- Plants -->
+		<div class="scrollable topbar bottombar">
+			<?php
+			show_plants($con);
+			?>
 		</div>
 
+
 		<div class="bottombox topbar bottombar">
-		<h4 class=" margin-left">Get a random fact</h4>
+			<h4 class=" margin-left">Get a random fact</h4>
 			<div class="listbox">
-				
+
 				<button class="button-fact margin-top margin-left" onclick="loadDoc()">Facts</button>
 				<p id="fact" class="margin-left margin-top"></p>
 			</div>

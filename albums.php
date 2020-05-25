@@ -20,7 +20,7 @@ protected_page();
 			}
 		</script>
 </head>
-<body class="light-grey content">
+<body class="light-grey">
 <nav>
 		<div>
 			<img src="images/icon.png" alt="icon.png"  class="icon">
