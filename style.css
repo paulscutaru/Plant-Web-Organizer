@@ -6,10 +6,6 @@ html{
 	height: 100%;
 }
 
-body{
-	float: left;	
-}
-
 h1{
 	font-size: 48px;
 	content: "";  
@@ -43,12 +39,6 @@ h4{
 }
 h5{font-size:18px}
 h6{font-size:16px}
-
-hr{
-	border:0;
-	border-top:1px solid #eee;
-	margin:20px 0
-}
 
 img{
 	vertical-align:middle
@@ -125,24 +115,28 @@ a{text-decoration: none;}
 .scrollable table{
 	text-align: center;
 	background: white;
-	border: lightgrey solid 2px;
+	border: lightgrey solid 4px;
 	width: 100%;
+	padding-bottom: 30px;
 }
 .scrollable td{
 	width: 10%;
 	height: 10%;
-	border: lightgrey solid 2px;
+	border: lightgrey solid 1px;
 }
-
+.scrollable th{
+	padding: 10px 0px 10px 0px;
+	background:lightgrey;
+}
 .scrollable img{
 	height: 120px;
 	width: 120px;
 	border: lightgrey solid 2px;
 }
 
-.tableTitle{
-	font-size: 33px;
-	padding: 27px 0px 27px 0px;
+.tableTitle{		
+	font-size: 25px;
+	padding: 15px 0px 15px 0px;
 }
 
 .button-addToAlbum,.button-delete{

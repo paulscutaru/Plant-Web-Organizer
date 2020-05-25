@@ -126,7 +126,7 @@ protected_page();
 
 
 		<!-- Table of plants-->
-		<div class="topbar bottombar scrollable">
+		<div class="scrollable">
 			<table>
 				<tr>
 					<th colspan="8" class="tableTitle">
