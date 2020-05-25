@@ -24,8 +24,8 @@ while ($row = mysqli_fetch_array($result)) {
         'others' => $row['others'],
         'date' => $row['date'],
     );
-    add_plant($con, $plant_data);
+    
+      add_plant($con, $plant_data);
 }
-mysqli_query($con, "DELETE FROM recommended_albums WHERE id=$id");
 header("Location: albums.php");
 exit();
