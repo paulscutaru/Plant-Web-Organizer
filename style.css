@@ -120,8 +120,8 @@ a{text-decoration: none;}
 }
 
 .scrollable img{
-	height: 230px;
-	width: 230px;
+	height: 220px;
+	width: 220px;
 }
 .scrollable img:hover {
 	transform: scale(1.4);
@@ -144,7 +144,7 @@ a{text-decoration: none;}
 	text-align: center;
 	background: white;
 	padding-bottom: 10px;
-	margin-left: 14px;
+	margin-left: 15px;
 	width: 31%;
 }
 
@@ -633,6 +633,9 @@ h3{
 /*---------Responsive------------*/
 
 @media screen and (max-width: 1100px) {
+	.loginbox{
+		height: 50%;
+	}
 	.managebox,.loginbox p,.loginbox a,.manageboxalb p, .manageboxalb a{
 		font-size: 10px;
 		height: 90%;
@@ -686,7 +689,9 @@ h3{
 		width: 55px;
 		height: 55px;
 	}
-	
+	.content{
+		width: 90%;
+	}
 	.scrollable{
 		height: 75%;
 	}
@@ -716,11 +721,16 @@ h3{
 		width:18px;
 		height: 10px;
 	}
+	.icon{
+		height: 65px;
+		width:65px;
+	}
 	.button-fact{
 		font-size:7px;
 		height: 11px;
 		width:50px;
 	}
+	
 }
 
 @media screen and (max-width: 570px) {
