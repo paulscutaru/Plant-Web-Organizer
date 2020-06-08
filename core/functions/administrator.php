@@ -1,4 +1,6 @@
-<?php function show_users($con)
+<?php
+/*Functii folosite de admin*/
+function show_users($con)
 {
     $id = $_SESSION['user_id'];
     $query = "SELECT COUNT(*) FROM users where id!=$id";
@@ -37,6 +39,45 @@
                     </div>
 					</td>
 					</tr>';
+        }
+    }
+}
+function show_all_plants($con)
+{
+    $query = "SELECT COUNT(*) FROM plants";
+    $count = mysqli_fetch_array(mysqli_query($con, $query));
+    if ($count[0] == 0) {
+        echo '<tr>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        <td> - </td>
+        </tr>';
+    } else {
+        $query = "SELECT * FROM plants";
+        $resultplants = mysqli_query($con, $query);
+        while ($row = mysqli_fetch_array($resultplants)) {
+            echo '
+            <tr>
+            <td> ' . $row['id'] . ' </td>
+            <td> ' . $row['id_user'] . ' </td>
+            <td> ' . $row['id_album'] . ' </td>
+            <td> ' . $row['photo'] . ' </td>
+            <td> ' . $row['name'] . ' </td>
+            <td> ' . $row['region'] . ' </td>
+            <td> ' . $row['color'] . ' </td>
+            <td> ' . $row['uses'] . ' </td>
+            <td> ' . $row['others'] . ' </td>
+            <td> ' . $row['date'] . ' </td>
+            <td><a class="button-delete shadow" href="admindeleteplant.php?id=' . $row['id'] . '">Delete</a></td>
+            </tr>';
         }
     }
 }

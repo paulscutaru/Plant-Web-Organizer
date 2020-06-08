@@ -4,6 +4,7 @@ include "core/init.php";
 $name = $_GET['album'];
 $id_plant = $_GET['id_plant'];
 $id_user = $_SESSION['user_id'];
+/*Daca e selectat none, planta va avea null la album */
 if ($name == "None")
     $query = "UPDATE plants SET id_album=null WHERE id=$id_plant";
 else {

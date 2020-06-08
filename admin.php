@@ -64,6 +64,34 @@ require 'core/functions/administrator.php';
 
             </table>
         </div>
+        <div class="scrollable">
+            <table>
+                <tr>
+                    <th colspan="11" class="tableTitle">
+                        Plants
+                    </th>
+                </tr>
+                <tr>
+                    <th>ID</th>
+                    <th>ID User</th>
+                    <th>ID Album</th>
+                    <th>Photo</th>
+                    <th>Name</th>
+                    <th>Region</th>
+                    <th>Color</th>
+                    <th>Uses</th>
+                    <th>Others</th>
+                    <th>Date</th>
+                    <th>Settings</th>
+                </tr>
+
+                <?php
+                show_all_plants($con);
+                ?>
+
+            </table>
+        </div>
+        
     </div>
 </body>
 

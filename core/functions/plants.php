@@ -24,16 +24,7 @@ function show_plants($con)
     $query = "SELECT COUNT(*) FROM plants where id_user='$id'";
     $count = mysqli_fetch_array(mysqli_query($con, $query));
     if ($count[0] == 0) {
-        echo '<tr>
-        <td> - </td>
-        <td> - </td>
-        <td> - </td>
-        <td> - </td>
-        <td> - </td>
-        <td> - </td>
-        <td> - </td>
-        <td> - </td>
-        </tr>';
+        echo 'No plants added.';
     } else {
         $filtered = isset($_GET['submit']);
 
@@ -87,11 +78,10 @@ function show_plants($con)
             echo '
                             </select>
                             <input type="hidden" name="id_plant" value="' . $row['id'] . '"/>
-                            <input type="submit" value="Add" class="button-addToAlbum shadow"/>
+                            <input type="submit" value="Add" class="button-addToAlbum shadow"/>  
                         </div>
                     </form>
-                    
-					</div>';
+                    </div>';
         }
     }
 }

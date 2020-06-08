@@ -33,7 +33,7 @@
 </html>
 
 <?php
-
+/*script care permite utilizatorului sa adauge un album*/
 include 'core/init.php';
 protected_page();
 if (empty($_POST) === false) {

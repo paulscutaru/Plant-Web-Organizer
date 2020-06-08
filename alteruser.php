@@ -1,5 +1,5 @@
 <?php
-/*Script folosit de admin pentru a altera userii*/
+/*Script folosit de admin pentru a modifica utilizatorii*/
 include "core/init.php";
 $id = $_GET['id'];
 $option = $_GET['option'];
