@@ -2,6 +2,7 @@
 /*Pagina pentru admin*/
 include 'core/init.php';
 require 'core/functions/administrator.php';
+protected_admin($con);
 ?>
 <!DOCTYPE html>
 <html lang="en">

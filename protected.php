@@ -1,6 +1,7 @@
 <?php
-/*Pagina in care esti redirectionat daca nu esti logat si incerci sa intri pe o pagina*/
+/*Pagina in care esti redirectionat daca nu esti logat si incerci sa intri pe o pagina, sau daca nu ai acces*/
 include 'core/init.php';
+session_destroy();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +17,7 @@ include 'core/init.php';
 
 <body>
     <div class="loginbox">
-        <h4>You are not logged in!</h4>
+        <h4>You don't have access on this page!</h4>
         <a href="index.html">Press here to redirect...</a>
     </div>
 </body>

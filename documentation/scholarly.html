@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 
 <head>
   <title>
@@ -10,9 +10,7 @@
 
 <body>
   <header>
-    <center>
-      <h1>Plant Web Organizer</h1>
-    </center>
+    <h1 style="text-align: center;">Plant Web Organizer</h1>
   </header>
 
   <section>
@@ -31,13 +29,36 @@
 
   <section>
     <h3><b>2. Etapele dezvoltarii proiectului</b></h3>
-    1. Design/Arhitectura proiect<br>
-    2. Modelare baza de date <br>
-    3. Creare pagini front-end <br>
-    4. Implementare scripturi MySQL<br>
-    5. Implementare scripturi PHP back-end<br>
-    6. Adaugare functionalitati AJAX<br>
-    7. Testing<br>
+    <h4>1. Design/Arhitectura proiect</h4>
+    <br><img src="/Plant-Web-Organizer/diagrams/uml.jpg" alt="uml.jpg"><br>
+    <h4>2. Modelare baza de date </h4>
+    <br>• Users:<br>
+    <br><img src="users.jpg" alt="users.jpg" width="800"><br>
+    <br>• Plants:<br>
+    <br><img src="plants.jpg" alt="plants.jpg" width="800"><br>
+    <br>• Albums:<br>
+    <br><img src="albums.jpg" alt="albums.jpg" width="800"><br>
+    <br>• Recommended albums:<br>
+    <br><img src="recommended.jpg" alt="recommended.jpg" width="800"><br>
+    <h4>3. Creare pagini front-end</h4>
+    <br>• Home:<br>
+    <br><img src="homepage.jpg" alt="homepage.jpg" width="800"><br>
+    <br>• Add album:<br>
+    <br><img src="addalbumspage.jpg" alt="addalbumspage.jpg" width="800"><br>
+    <br>• Add plant:<br>
+    <br><img src="addplantspage.jpg" alt="addplantspage.jpg" width="800"><br>
+    <br>• Index:<br>
+    <br><img src="indexpage.jpg" alt="indexpage.jpg" width="800"><br>
+    <br>• Register:<br>
+    <br><img src="registerpage.jpg" alt="registerpage.jpg" width="800"><br>
+    <br>• Login:<br>
+    <br><img src="loginpage.jpg" alt="loginpage.jpg" width="800"><br>
+    <br>• Admin:<br>
+    <br><img src="adminpage.jpg" alt="adminpage.jpg" width="800"><br>
+    <h4>4. Implementare scripturi MySQL</h4>
+    <h4>5. Implementare scripturi PHP back-end</h4>
+    <h4>6. Adaugare functionalitati AJAX</h4>
+    <h4>7. Testing</h4><br>
   </section>
 
   <section>
@@ -69,7 +90,8 @@
     <b>24. Bug fix adaugare plante in album</b> - Scutaru Paul (Mai 19, 2020)<br>
     <b>25. Pagina admin</b> - Scutaru Paul (Mai 21, 2020)<br>
     <b>26. Documentatie</b> - Scutaru Paul (Mai 23, 2020)<br>
-    <b>26. Finalizare Albume</b> - Scutaru Paul, Panainte Alexandru (Mai 25, 2020)</b>
+    <b>27. Finalizare Albume</b> - Scutaru Paul, Panainte Alexandru (Mai 25, 2020)<br>
+    <b>28. Ultima verificare/ajustare a proiectului</b> - Scutaru Paul (Iunie 10, 2020)
   </section>
 
   <section>
@@ -86,20 +108,43 @@
   <section>
     <h3><b>5. Structura aplicatiei. Ghid.</b></h3>
 
+    <p>Interactiunea cu utilizatorul se face cu ajutorul form-urilor HTML. Acesta trimite date,
+      completand campuri sau alegand optiuni din dropdown-uri. Datele sunt apoi preluate in back-end,
+      validate, dupa care se fac interogari in baza de date si se actualizeaza corespunzator pagina pe care se afla
+      utilizatorul.
+      <br>
+    </p>
     <h4><br>Pagina de pornire<br></h4>
     <p>Pagina index.html constituie pagina de inceput,
-      utilizatorul are optiunile de a se inregistra sau a se loga, in caz ca detine deja un cont.</p>
+      utilizatorul are optiunile de a se inregistra sau a se loga, in caz ca detine deja un cont.<br>
+      In functie de alegerea sa, acesta va fi redirectionat pe pagina respectiva.
+    </p>
 
     <h4><br>Pagina de register</h4>
-    Mergand mai departe pe pagina de register, utilizatorul va introduce:<br>
-    • un nume de utilizator<br>
-    • o parola de minim 6 caractere<br>
-    • un email valid<br></p>
+    <p>
+      Mergand mai departe pe pagina de register, utilizatorul va introduce:<br>
+      • un nume de utilizator<br>
+      • o parola de minim 6 caractere<br>
+      • un email valid<br>
+      Parola va fi criptata folosind md5 din PHP, din motive de securitate.
+      Validarea facuta in back-end va verifica daca numele de utilizator exista deja sau nu,
+      daca lungimea parolei este corespunzatoare si daca email-ul introdus este valid.<br>
+      In caz ca inregistrarea a reusit, utilizatorul va fi redirectionat pe pagina principala.
+      Altfel, vor fi afisate erorile corespunzatoare, aparute fie la validare, fie la inserarea propriu zisa.<br>
+      Utilizatorul are posibilitatea de a incerca din nou sa se inregistreze, dupa ce a observat erorile aparute
+      si a ajustat campurile introduse.
+    </p>
 
     <h4><br>Pagina de logare</h4>
-    Pe aceasta pagina, utilizatorul se poate loga cu datele contului sau:<br>
-    • nume de utilizator<br>
-    • parola<br>
+    <p>
+      Pe aceasta pagina, utilizatorul se poate loga cu datele contului sau:<br>
+      • nume de utilizator<br>
+      • parola<br>
+      In back-end vor fi validate numele de utilizator si parola, facandu-se interogari in baza de date. <br>
+      Utilizatorul va fi redirectionat in caz de succes pe pagina principala,
+      altfel, vor fi afisate erorile corespunzatoare, aparute la validare.
+      Acesta are posibilitatea de a incerca din nou, dupa ce a observat erorile aparute si
+      a ajustat campurile introduse.
     </p>
 
     <h4><br>Pagina principala/home</h4>
@@ -109,9 +154,8 @@
       plante in/din albume, sau sa le stearga <br>
       • filtrare plante dupa atributele aferente, sortare<br>
       • un buton "facts" care ii va prezenta diverse curiozitati despre plante<br>
-      • un buton "RSS" care va redirectiona utilizatorul catre o pagina xml ce contine un flux RSS cu cele mai populare
-      5
-      plante<br><br>
+      • un buton "RSS" care va redirectiona utilizatorul catre o pagina xml ce contine un flux RSS cu
+      cele mai populare 5 plante<br><br>
       In partea din stanga a paginii se afla bara de navigare,
       aceasta ofera utilizatorului diverse functionalitati sau il redirectioneaza pe alte pagini:<br>
       • "Add plants" il va duce pe pagina unde poate adauga plante impreuna cu diverse atribute<br>
@@ -132,8 +176,10 @@
       5. utilizari<br>
       6. altele<br>
       Dupa completarea acestor campuri, utilizatorul va apasa butonul de upload si planta va fi inregistrata daca ea nu
-      exista deja si
-      daca au fost completate corect campurile. De asemenea, acesta se poate intoarce oricand pe pagina principala daca
+      exista deja si daca au fost completate corect campurile. <br>
+      Validarea facuta in back-end verifica exista plantei in inventarul utilizatorului.
+      Utilizatorul nu poate introduce de mai multe ori o planta cu acelasi nume, pentru a nu starni confuzie.
+      De asemenea, acesta se poate intoarce oricand pe pagina principala daca
       doreste, apasand "home page".
     </p>
 
@@ -153,28 +199,38 @@
       Utilizatorul poate adauga albume sub forma de:<br>
       1. imagine<br>
       2. nume<br>
+      Validarea facuta in back-end verifica exista albumului in inventarul utilizatorului.
+      Utilizatorul nu poate introduce de mai multe ori un album cu acelasi nume, pentru a nu starni confuzie.
     </p>
 
     <h4><br>Pagina de admin</h4>
-    Site-ul dispune functionalitati de admin, disponibile la logarea acestuia cu contul sau unic:<br>
+    Site-ul ofera functionalitati pentru admin, disponibile la logarea acestuia cu contul sau unic:<br>
     • stergere useri<br>
-    • blocare/deblocare useri<br><br>
+    • blocare/deblocare useri<br>
+    • stergere plante<br>
+    Adminul detine un cont special, fiind singurul cu acces la aceasta pagina.<br>
 
     <br><b>Tabelele din baza de date:</b><br>
     • users(id,username,password,email,date,type)<br>
+    Stocheaza utilizatorii inregistrati si informatiile acestora.<br><br>
     • plants(id,id_user,id_album,photo,name,region,color,uses,others,date)<br>
+    Stocheaza plantele adaugate de catre utilizatori si atributele aferente. <br><br>
     • albums(id,id_user,photo,name)<br>
+    Stocheaza albumele adaugate de catre utilizatori si informatiile acestora.<br><br>
     • recommended_albums(id)<br>
+    Stocheaza id-urile albumelor care au fost recomandate de catre utilizatori, pentru a putea fi partajate<br>
   </section>
 
   <section>
-    <br><b>Servicii folosite:</b><br>
+    <br>
+    <h3>Servicii folosite:</h3>
     • <a href="https://github.com/" target="_blank">Github</a><br>
     • <a href="https://www.apachefriends.org/" target="_blank">XAMPP</a><br>
   </section>
 
   <section>
-    <br><b>Bibliografie:</b><br>
+    <br>
+    <h3>Bibliografie:</h3>
     • <a href="https://www.w3schools.com/" target="_blank">https://www.w3schools.com</a><br>
     • <a href="https://www.tutorialspoint.com/php/index.htm"
       target="_blank">https://www.tutorialspoint.com/php/index.htm</a><br>

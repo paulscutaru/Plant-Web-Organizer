@@ -186,8 +186,8 @@ foreach ($results_post as $row) {
     $res_array = array();
     foreach ($row as $element) {
         //PDF
-        $id_album = get_album_id($con, $element);
-        $query2 = "SELECT COUNT(id) FROM plants WHERE id_user=$id AND id_album=$id_album";
+        $id_album = get_album_id($con, $element, $id);
+        $query2 = "SELECT COUNT(*) FROM plants WHERE id_user=$id AND id_album=$id_album";
         $result2 = mysqli_query($con, $query2);
         $count = mysqli_fetch_row($result2);
         $pdf->Cell(37, 10, $element);

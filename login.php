@@ -46,12 +46,14 @@ if (!empty($_POST)) {
 	} else if (!user_exists($con, $username)) {
 		$errors[] = 'The username does not exist!';
 	} else {
+		//returneaza id-ul utilizatorului daca a reusit, sau false altfel
 		$login = login($con, $username, $password);
 		if (!$login) {
 			$errors[] = 'Wrong username or password!';
 		} else {
 			$_SESSION['user_id'] = $login;
-			$query = mysqli_query($con, "SELECT type FROM `users` WHERE id = $login");
+			//vedem de ce tip este utilizatorul pentru a il redirectiona pe pagina corespunzatoare
+			$query = mysqli_query($con, "SELECT `type` FROM `users` WHERE id = $login");
 			$result = mysqli_fetch_array($query);
 			if ($result[0] == "admin") {
 				header('Location: admin.php');

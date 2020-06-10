@@ -81,3 +81,10 @@ function show_all_plants($con)
         }
     }
 }
+function protected_admin($con){
+    $result = mysqli_fetch_array(mysqli_query($con,"SELECT `id` from `users` where `username`='admin'"));
+    if (logged_in() === false || $_SESSION["user_id"] != $result[0]) {
+		header('Location: protected.php');
+		exit();
+    }
+}

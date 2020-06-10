@@ -12,8 +12,9 @@ function add_album($con, $album_data)
     move_uploaded_file($_FILES['photo']['tmp_name'], $target_dir . $_FILES["photo"]["name"]);
     mysqli_query($con, "INSERT INTO `albums` ($fields) VALUES ($data)");
     $id = mysqli_fetch_array(mysqli_query($con, "SELECT LAST_INSERT_ID()"));
-    return $id[0];
+    return $id[0] > 0 ? $id[0] : false;
 }
+
 /*Returneaza daca un album exista deja*/
 function album_exists($con, $user, $album)
 {
@@ -23,13 +24,15 @@ function album_exists($con, $user, $album)
     $result = mysqli_fetch_array($query);
     return $result[0] > 0 ? true : false;
 }
+
 /*Primeste numele albumului si ii returneaza id-ul*/
-function get_album_id($con, $name)
+function get_album_id($con, $name, $id_user)
 {
-    $query = mysqli_query($con, "SELECT `id` FROM `albums` WHERE `name` = '$name'");
+    $query = mysqli_query($con, "SELECT `id` FROM `albums` WHERE `name` = '$name' and `id_user`=$id_user");
     $result = mysqli_fetch_array($query);
     return $result[0];
 }
+
 /*Functie de render albume*/
 function show_albums($con)
 {
@@ -61,22 +64,23 @@ function show_albums($con)
             while ($rowplants = mysqli_fetch_array($resultplants)) {
                 echo  '
                     <div class="displayblock">
-                    <img class="small-image" src="images/' . $rowplants['photo'] . '" alt="image"/>
-                    <label>' . $rowplants['name'] . '</label>
+                        <img class="small-image" src="images/' . $rowplants['photo'] . '" alt="image"/>
+                        <label>' . $rowplants['name'] . '</label>
                     </div>';
             }
             echo
                    '</td>
                     <td>
-                    <div>
-                    <a class="button-addToAlbum shadow" href="sharealbum.php?id=' . $row['id'] . '">Share</a>
-                    </div>
-					<a class="button-delete shadow" href="deletealbum.php?id=' . $row['id'] . '">Delete</a>
+                        <div>
+                        <a class="button-addToAlbum shadow" href="sharealbum.php?id=' . $row['id'] . '">Share</a>
+                        </div>
+					    <a class="button-delete shadow" href="deletealbum.php?id=' . $row['id'] . '">Delete</a>
 					</td>
 					</tr>';
         }
     }
 }
+
 /*Functie de render albume recomandate */
 function show_recommended_albums($con)
 {
@@ -101,6 +105,7 @@ function show_recommended_albums($con)
         while ($row = mysqli_fetch_array($result))
             $query2 = $query2 . " or id=" . $row['id'];
         $result = mysqli_query($con, $query2);
+        //Afisare albume recomandate
         while ($row = mysqli_fetch_array($result)) {
             $id_album = $row['id'];
             $queryplants = "SELECT photo,name FROM plants WHERE id_album=$id_album";
@@ -115,8 +120,8 @@ function show_recommended_albums($con)
             while ($rowplants = mysqli_fetch_array($resultplants)) {
                 echo  '
                     <div class="displayblock">
-                    <img class="small-image" src="images/' . $rowplants['photo'] . '" alt="image"/>
-                    <label>' . $rowplants['name'] . '</label>
+                        <img class="small-image" src="images/' . $rowplants['photo'] . '" alt="image"/>
+                        <label>' . $rowplants['name'] . '</label>
                     </div>';
             }
             echo
