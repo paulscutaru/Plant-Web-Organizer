@@ -58,8 +58,11 @@
     <br>• XML RSS:<br>
     <br><img src="xmlrss.jpg" alt="xmlrss.jpg" width="800"><br>
     <h4>4. Implementare scripturi MySQL</h4>
+    <p>(Scripturile de creare tabele)</p>
     <h4>5. Implementare scripturi PHP back-end</h4>
     <h4>6. Adaugare functionalitati AJAX</h4>
+    <p>(Inchiderea si deschiderea dinamica a barei de navigare care se afla pe diverse pagini din proiect
+      , cat si preluarea printr-un request XMLHTTP a datelor aflate in fisierul "facts.txt")</p>
     <h4>7. Testing</h4><br>
   </section>
 
@@ -108,7 +111,7 @@
   </section>
 
   <section>
-    <h3><b>5. Structura aplicatiei. Ghid.</b></h3>
+    <h3><b>5. Structura aplicatiei. Ghid de utilizare.</b></h3>
 
     <p>Interactiunea cu utilizatorul se face cu ajutorul form-urilor HTML. Acesta trimite date,
       completand campuri sau alegand optiuni din dropdown-uri. Datele sunt apoi preluate in back-end,
@@ -120,6 +123,7 @@
     <p>Pagina index.html constituie pagina de inceput,
       utilizatorul are optiunile de a se inregistra sau a se loga, in caz ca detine deja un cont.<br>
       In functie de alegerea sa, acesta va fi redirectionat pe pagina respectiva.
+      Redirectionarea se realizeaza cu ajutorul tagului "a" din HTML, cu atributul "href".
     </p>
 
     <h4><br>Pagina de register</h4>
@@ -221,6 +225,82 @@
     Stocheaza albumele adaugate de catre utilizatori si informatiile acestora.<br><br>
     • recommended_albums(id)<br>
     Stocheaza id-urile albumelor care au fost recomandate de catre utilizatori, pentru a putea fi partajate<br>
+  </section>
+
+  <section>
+    <br>
+    <h3>6. Detalii back-end:</h3>
+    <p>
+      Folderul "core" contine scripturi cu functii folosite in proiect, scriptul de initializare, scriptul de creare a tabelelor.<br> 
+      <br><img src="core.jpg" alt="core.jpg" width="300"><br>
+      <br><img src="folders.jpg" alt="folders.jpg" width="300"><br>
+      <b>Database:</b><br>
+      • connect.php<br>
+      Realizeaza conexiunea la baza de date "herbaweb" in MySQL.<br><br>
+      • create_tables.sql<br>
+      Script care contine modul in care au fost create tabelele din baza de date, cu constrangeri, chei, etc.<br><br>
+      <b>Functions:</b><br>
+      • administrator.php<br>
+      Contine functii folosite de in implementarea paginii de admin, folosite de catre administrator.<br><br>
+      • album.php<br>
+      Contine functii folosite in implementarea paginii de albume.<br><br
+      >• fpdf.php<br>
+      Reprezinta libraria folosita pentru generarea de PDF-uri.<br><br>
+      • general.php<br>
+      Contine functii uzuale folosite mai pe toate paginile din site.<br><br>
+      • plants.php<br>
+      Contine functii folosite in implementarea paginii principale, 
+      de exemplu afisarea plantelor, afisarea categoriilor de plante, cat si pe pagina de adaugare plante.<br><br>
+      • users.php<br>
+      Contine functii folosite in implementarea paginilor de login si register.<br><br>
+      • init.php<br>
+      Script folosit pe aproape toate paginile, initializeaza sesiunea, array-ul cu erori, include fisierele cu functii prezentate mai sus.<br><br>
+      <b>Diagrams:</b><br>
+      Contine diagrama UML a arhitecturii proiectului.<br><br>
+      <b>Documentation:</b><br> 
+      In folderul cu pricina se afla chiar aceasta pagina, cat si resursele acesteia, iar in "images" sunt toate imaginile plantelor
+      si albumelor utilizatorilor, cat si diverse imagini folosite in proiect, cum ar fi iconita HerbaWeb.<br><br>
+      <b>Scripturile folosite in proiect:</b><br>
+      <br><img src="scripts.jpg" alt="scripts.jpg" width="300"><br>
+      • addalbum.php<br>
+      Permite utilizatorului sa adauge un album, contine de asemena si pagina de adaugare album.<br><br>
+      • addtoalbum.php<br>
+      Permite utilizatorului sa adauge o planta intr-un album.<br><br>
+      • admin.php<br>
+      Implementeaza pagina de admin.<br><br>
+      • admindeleteplant.php<br>
+      Permite adminului sa stearga plante din baza de date.<br><br>
+      • albums.php<br>
+      Implementeaza pagina de albume cu functionalitatile acesteia.<br><br>
+      • alteruser.php<br>
+      Permite adminului sa blocheze/deblocheze un utilizator, sau sa il stearga.<br><br>
+      • delete.php<br>
+      Realizeaza stergerea unei plante din inventarul utilizatorului, cand apasa butonul "Delete" de deasupra plantei.<br><br>
+      • deletealbum.php<br>
+      Realizeaza stergerea unui album din inventarul utilizatorului, cand apasa butonul "Delete".<br><br>
+      • deleterecommended.php<br>
+      Realizeaza stergerea unui album din sectiunea de albume recomandate.<br><br>
+      • exportdata.php<br>
+      Script care permite utilizatorului sa downloadeze o arhiva zip continand un PDF, un JSON si un CSV cu statistici diverse.<br><br>
+      • facts.txt<br>
+      Un fisier text in care sunt stocate diverse curiozitati.<br><br>
+      • getalbum.php<br>
+      Script care implementeaza functionalitatea de obtinere a unui album cu plante partajat de catre alt utilizator.<br><br>
+      • home.php<br>
+      Implementeaza pagina principala.<br><br>
+      • login.php<br>
+      Implementeaza functionalitatea de logare a utilizatorului, folosita si de catre admin pentru a se loga cu contul sau unic.<br><br>
+      • logout.php<br>
+      Realizeaza delogarea utilizatorului.<br><br>
+      • protected.php<br>
+      Contine pagina pe care este redirectionat utilizatorul daca nu este logat sau daca nu are acces la o pagina.<br><br>
+      • register.php<br>
+      Implementeaza functionalitatea de inregistrare a utilizatorului.<br><br>
+      • rss.php<br>
+      Creeaza dinamic pagina XML cu topul celor mai populare 5 plante sub forma de flux RSS.<br><br>
+      • sharealbum.php<br>
+      Implementeaza functionalitatea de recomandare a unui album de catre utilizator.
+    </p>
   </section>
 
   <section>
