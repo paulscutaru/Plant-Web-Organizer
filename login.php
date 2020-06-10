@@ -35,7 +35,8 @@
 </html>
 
 <?php
-/*Script pentru login*/
+/*Script pentru login
+Cod inspirat de la https://github.com/BocaBogdan/Tehnologii-Web-Proiect*/
 include 'core/init.php';
 
 if (!empty($_POST)) {

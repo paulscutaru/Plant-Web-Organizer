@@ -37,7 +37,8 @@
 </html>
 
 <?php
-/*Script pentru register*/
+/*Script pentru register
+Cod inspirat de la https://github.com/BocaBogdan/Tehnologii-Web-Proiect*/
 include 'core/init.php';
 logged_in_redirect();
 
